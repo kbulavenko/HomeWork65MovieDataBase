@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MyViewController1">
+            <connections>
+                <outlet property="btnAdd" destination="LYD-dp-pN1" id="ute-35-MO3"/>
+                <outlet property="btnDel" destination="Lca-ch-Tsa" id="6UV-Bc-BQ3"/>
+                <outlet property="btnEdt" destination="ApN-Jm-h10" id="wa0-qk-7XU"/>
+                <outlet property="tableView" destination="1Fc-7X-kr1" id="5gu-gy-M9Q"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LYD-dp-pN1">
+                    <rect key="frame" x="14" y="13" width="145" height="32"/>
+                    <buttonCell key="cell" type="push" title="Добавить" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sB6-91-nJu">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="btnClick:" target="-2" id="YcY-81-z35"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lca-ch-Tsa">
+                    <rect key="frame" x="168" y="13" width="145" height="32"/>
+                    <buttonCell key="cell" type="push" title="Удалить" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4EA-uk-zxg">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="btnClick:" target="-2" id="Tvn-4e-9dU"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ApN-Jm-h10">
+                    <rect key="frame" x="321" y="13" width="145" height="32"/>
+                    <buttonCell key="cell" type="push" title="Редактировать" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A6f-cp-jet">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="btnClick:" target="-2" id="OWG-Bp-weI"/>
+                    </connections>
+                </button>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeM-3i-3FL">
+                    <rect key="frame" x="20" y="61" width="440" height="199"/>
+                    <clipView key="contentView" id="Thm-3N-vvI">
+                        <rect key="frame" x="1" y="0.0" width="438" height="198"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6Lf-Be-Rjt" id="1Fc-7X-kr1">
+                                <rect key="frame" x="0.0" y="0.0" width="438" height="175"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <size key="intercellSpacing" width="3" height="2"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <tableColumns>
+                                    <tableColumn identifier="" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="UD0-Kt-VAN">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Жанр">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="gVO-CO-01F">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                    </tableColumn>
+                                </tableColumns>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="E5k-mV-lEF">
+                        <rect key="frame" x="1" y="183" width="438" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="rhY-Xw-8zF">
+                        <rect key="frame" x="-14" y="15" width="15" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <tableHeaderView key="headerView" id="6Lf-Be-Rjt">
+                        <rect key="frame" x="0.0" y="0.0" width="438" height="23"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tableHeaderView>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="CeM-3i-3FL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="14x-DB-hLZ"/>
+                <constraint firstAttribute="bottom" secondItem="LYD-dp-pN1" secondAttribute="bottom" constant="20" id="36T-qw-RON"/>
+                <constraint firstAttribute="trailing" secondItem="CeM-3i-3FL" secondAttribute="trailing" constant="20" id="3fN-8E-Sjw"/>
+                <constraint firstItem="ApN-Jm-h10" firstAttribute="width" secondItem="LYD-dp-pN1" secondAttribute="width" id="G3U-N7-4RV"/>
+                <constraint firstAttribute="trailing" secondItem="ApN-Jm-h10" secondAttribute="trailing" constant="20" id="JX0-gp-Lhe"/>
+                <constraint firstAttribute="bottom" secondItem="Lca-ch-Tsa" secondAttribute="bottom" constant="20" id="MSf-ks-afy"/>
+                <constraint firstItem="Lca-ch-Tsa" firstAttribute="width" secondItem="LYD-dp-pN1" secondAttribute="width" id="PT4-8w-76y"/>
+                <constraint firstItem="CeM-3i-3FL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="12" id="TMj-Hz-mEo"/>
+                <constraint firstItem="ApN-Jm-h10" firstAttribute="leading" secondItem="Lca-ch-Tsa" secondAttribute="trailing" constant="20" id="am8-Y3-RHf"/>
+                <constraint firstItem="LYD-dp-pN1" firstAttribute="top" secondItem="CeM-3i-3FL" secondAttribute="bottom" constant="20" id="ekS-cy-kUY"/>
+                <constraint firstItem="Lca-ch-Tsa" firstAttribute="top" secondItem="CeM-3i-3FL" secondAttribute="bottom" constant="20" id="hgY-sK-fnR"/>
+                <constraint firstAttribute="bottom" secondItem="ApN-Jm-h10" secondAttribute="bottom" constant="20" id="joX-Zf-Bq8"/>
+                <constraint firstItem="Lca-ch-Tsa" firstAttribute="leading" secondItem="LYD-dp-pN1" secondAttribute="trailing" constant="21" id="q90-ga-ZXE"/>
+                <constraint firstItem="ApN-Jm-h10" firstAttribute="top" secondItem="CeM-3i-3FL" secondAttribute="bottom" constant="20" id="q9L-dl-hAK"/>
+                <constraint firstItem="LYD-dp-pN1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ukg-5h-6dG"/>
+            </constraints>
+            <point key="canvasLocation" x="60" y="364"/>
+        </customView>
+    </objects>
+</document>

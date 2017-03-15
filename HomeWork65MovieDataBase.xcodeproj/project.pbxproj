@@ -14,6 +14,27 @@
 		19E1049A1E79371F007476A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E104981E79371F007476A3 /* Main.storyboard */; };
 		19E104A51E79371F007476A3 /* HomeWork65MovieDataBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104A41E79371F007476A3 /* HomeWork65MovieDataBaseTests.m */; };
 		19E104B01E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104AF1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m */; };
+		19E104CC1E793AF8007476A3 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C21E793AF8007476A3 /* FMDatabase.m */; };
+		19E104CD1E793AF8007476A3 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C41E793AF8007476A3 /* FMDatabaseAdditions.m */; };
+		19E104CE1E793AF8007476A3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C61E793AF8007476A3 /* FMDatabasePool.m */; };
+		19E104CF1E793AF8007476A3 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C81E793AF8007476A3 /* FMDatabaseQueue.m */; };
+		19E104D01E793AF8007476A3 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104CB1E793AF8007476A3 /* FMResultSet.m */; };
+		19E104D11E793B6E007476A3 /* FMDatabase.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C11E793AF8007476A3 /* FMDatabase.h */; };
+		19E104D21E793B6E007476A3 /* FMDatabaseAdditions.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C31E793AF8007476A3 /* FMDatabaseAdditions.h */; };
+		19E104D31E793B6E007476A3 /* FMDatabasePool.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C51E793AF8007476A3 /* FMDatabasePool.h */; };
+		19E104D41E793B6E007476A3 /* FMDatabaseQueue.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C71E793AF8007476A3 /* FMDatabaseQueue.h */; };
+		19E104D51E793B6E007476A3 /* FMDB.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104C91E793AF8007476A3 /* FMDB.h */; };
+		19E104D61E793B6E007476A3 /* FMResultSet.h in Sources */ = {isa = PBXBuildFile; fileRef = 19E104CA1E793AF8007476A3 /* FMResultSet.h */; };
+		19E104D81E793B8B007476A3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E104D71E793B8B007476A3 /* libsqlite3.tbd */; };
+		19E104DD1E794C86007476A3 /* MyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DC1E794C86007476A3 /* MyDB.m */; };
+		19E104E01E79790D007476A3 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DF1E79790D007476A3 /* MyTableViewController.m */; };
+		19ED02851E79BC2A005F687F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02831E79BC2A005F687F /* MyViewController.m */; };
+		19ED02861E79BC2A005F687F /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02841E79BC2A005F687F /* MyViewController.xib */; };
+		19ED02881E79F607005F687F /* MyViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02871E79F607005F687F /* MyViewController1.xib */; };
+		19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02891E79F61B005F687F /* MyViewController2.xib */; };
+		19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED028B1E79F62A005F687F /* MyViewController3.xib */; };
+		19ED028F1E79F7CE005F687F /* MyViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED028E1E79F7CE005F687F /* MyViewController1.m */; };
+		19ED02921E79FA81005F687F /* MyTableViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02911E79FA81005F687F /* MyTableViewController1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +70,33 @@
 		19E104AB1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeWork65MovieDataBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E104AF1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeWork65MovieDataBaseUITests.m; sourceTree = "<group>"; };
 		19E104B11E79371F007476A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19E104C11E793AF8007476A3 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = fmdb/FMDatabase.h; sourceTree = SOURCE_ROOT; };
+		19E104C21E793AF8007476A3 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = fmdb/FMDatabase.m; sourceTree = SOURCE_ROOT; };
+		19E104C31E793AF8007476A3 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = fmdb/FMDatabaseAdditions.h; sourceTree = SOURCE_ROOT; };
+		19E104C41E793AF8007476A3 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = fmdb/FMDatabaseAdditions.m; sourceTree = SOURCE_ROOT; };
+		19E104C51E793AF8007476A3 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = fmdb/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
+		19E104C61E793AF8007476A3 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = fmdb/FMDatabasePool.m; sourceTree = SOURCE_ROOT; };
+		19E104C71E793AF8007476A3 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = fmdb/FMDatabaseQueue.h; sourceTree = SOURCE_ROOT; };
+		19E104C81E793AF8007476A3 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = fmdb/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
+		19E104C91E793AF8007476A3 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = fmdb/FMDB.h; sourceTree = SOURCE_ROOT; };
+		19E104CA1E793AF8007476A3 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = fmdb/FMResultSet.h; sourceTree = SOURCE_ROOT; };
+		19E104CB1E793AF8007476A3 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = fmdb/FMResultSet.m; sourceTree = SOURCE_ROOT; };
+		19E104D71E793B8B007476A3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		19E104DA1E7944C4007476A3 /* Movies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movies.h; sourceTree = "<group>"; };
+		19E104DB1E794C86007476A3 /* MyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDB.h; sourceTree = "<group>"; };
+		19E104DC1E794C86007476A3 /* MyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDB.m; sourceTree = "<group>"; };
+		19E104DE1E79790D007476A3 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		19E104DF1E79790D007476A3 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		19ED02821E79BC2A005F687F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		19ED02831E79BC2A005F687F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		19ED02841E79BC2A005F687F /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		19ED02871E79F607005F687F /* MyViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController1.xib; sourceTree = "<group>"; };
+		19ED02891E79F61B005F687F /* MyViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController2.xib; sourceTree = "<group>"; };
+		19ED028B1E79F62A005F687F /* MyViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController3.xib; sourceTree = "<group>"; };
+		19ED028D1E79F7C3005F687F /* MyViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController1.h; sourceTree = "<group>"; };
+		19ED028E1E79F7CE005F687F /* MyViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController1.m; sourceTree = "<group>"; };
+		19ED02901E79FA78005F687F /* MyTableViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController1.h; sourceTree = "<group>"; };
+		19ED02911E79FA81005F687F /* MyTableViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E104D81E793B8B007476A3 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +128,7 @@
 		19E104811E79371E007476A3 = {
 			isa = PBXGroup;
 			children = (
+				19E104D71E793B8B007476A3 /* libsqlite3.tbd */,
 				19E1048C1E79371E007476A3 /* HomeWork65MovieDataBase */,
 				19E104A31E79371F007476A3 /* HomeWork65MovieDataBaseTests */,
 				19E104AE1E79371F007476A3 /* HomeWork65MovieDataBaseUITests */,
@@ -99,10 +149,10 @@
 		19E1048C1E79371E007476A3 /* HomeWork65MovieDataBase */ = {
 			isa = PBXGroup;
 			children = (
-				19E1048D1E79371E007476A3 /* AppDelegate.h */,
-				19E1048E1E79371E007476A3 /* AppDelegate.m */,
-				19E104931E79371E007476A3 /* ViewController.h */,
-				19E104941E79371E007476A3 /* ViewController.m */,
+				19E104D91E7940A6007476A3 /* API */,
+				19E104BF1E7939FE007476A3 /* Controller */,
+				19E104BE1E7939F5007476A3 /* View */,
+				19E104BD1E7939EC007476A3 /* Model */,
 				19E104961E79371E007476A3 /* Assets.xcassets */,
 				19E104981E79371F007476A3 /* Main.storyboard */,
 				19E1049B1E79371F007476A3 /* Info.plist */,
@@ -135,6 +185,72 @@
 				19E104B11E79371F007476A3 /* Info.plist */,
 			);
 			path = HomeWork65MovieDataBaseUITests;
+			sourceTree = "<group>";
+		};
+		19E104BD1E7939EC007476A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19E104DA1E7944C4007476A3 /* Movies.h */,
+				19E104DB1E794C86007476A3 /* MyDB.h */,
+				19E104DC1E794C86007476A3 /* MyDB.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		19E104BE1E7939F5007476A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		19E104BF1E7939FE007476A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19E104931E79371E007476A3 /* ViewController.h */,
+				19E104941E79371E007476A3 /* ViewController.m */,
+				19E104DE1E79790D007476A3 /* MyTableViewController.h */,
+				19ED02901E79FA78005F687F /* MyTableViewController1.h */,
+				19E104DF1E79790D007476A3 /* MyTableViewController.m */,
+				19ED02911E79FA81005F687F /* MyTableViewController1.m */,
+				19ED02821E79BC2A005F687F /* MyViewController.h */,
+				19ED02831E79BC2A005F687F /* MyViewController.m */,
+				19ED028D1E79F7C3005F687F /* MyViewController1.h */,
+				19ED028E1E79F7CE005F687F /* MyViewController1.m */,
+				19ED02841E79BC2A005F687F /* MyViewController.xib */,
+				19ED02891E79F61B005F687F /* MyViewController2.xib */,
+				19ED02871E79F607005F687F /* MyViewController1.xib */,
+				19ED028B1E79F62A005F687F /* MyViewController3.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		19E104C01E793A23007476A3 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				19E104C11E793AF8007476A3 /* FMDatabase.h */,
+				19E104C21E793AF8007476A3 /* FMDatabase.m */,
+				19E104C31E793AF8007476A3 /* FMDatabaseAdditions.h */,
+				19E104C41E793AF8007476A3 /* FMDatabaseAdditions.m */,
+				19E104C51E793AF8007476A3 /* FMDatabasePool.h */,
+				19E104C61E793AF8007476A3 /* FMDatabasePool.m */,
+				19E104C71E793AF8007476A3 /* FMDatabaseQueue.h */,
+				19E104C81E793AF8007476A3 /* FMDatabaseQueue.m */,
+				19E104C91E793AF8007476A3 /* FMDB.h */,
+				19E104CA1E793AF8007476A3 /* FMResultSet.h */,
+				19E104CB1E793AF8007476A3 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
+		19E104D91E7940A6007476A3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				19E104C01E793A23007476A3 /* FMDB */,
+				19E1048D1E79371E007476A3 /* AppDelegate.h */,
+				19E1048E1E79371E007476A3 /* AppDelegate.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +356,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19ED02881E79F607005F687F /* MyViewController1.xib in Resources */,
 				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
+				19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */,
 				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
+				19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */,
+				19ED02861E79BC2A005F687F /* MyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +386,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E104DD1E794C86007476A3 /* MyDB.m in Sources */,
+				19E104D11E793B6E007476A3 /* FMDatabase.h in Sources */,
+				19E104D21E793B6E007476A3 /* FMDatabaseAdditions.h in Sources */,
+				19E104D31E793B6E007476A3 /* FMDatabasePool.h in Sources */,
+				19E104D41E793B6E007476A3 /* FMDatabaseQueue.h in Sources */,
+				19E104D51E793B6E007476A3 /* FMDB.h in Sources */,
+				19E104D61E793B6E007476A3 /* FMResultSet.h in Sources */,
+				19ED02921E79FA81005F687F /* MyTableViewController1.m in Sources */,
 				19E104951E79371E007476A3 /* ViewController.m in Sources */,
+				19E104CE1E793AF8007476A3 /* FMDatabasePool.m in Sources */,
 				19E104921E79371E007476A3 /* main.m in Sources */,
+				19E104CF1E793AF8007476A3 /* FMDatabaseQueue.m in Sources */,
 				19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */,
+				19ED02851E79BC2A005F687F /* MyViewController.m in Sources */,
+				19E104CC1E793AF8007476A3 /* FMDatabase.m in Sources */,
+				19ED028F1E79F7CE005F687F /* MyViewController1.m in Sources */,
+				19E104D01E793AF8007476A3 /* FMResultSet.m in Sources */,
+				19E104CD1E793AF8007476A3 /* FMDatabaseAdditions.m in Sources */,
+				19E104E01E79790D007476A3 /* MyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +625,7 @@
 				19E104B61E79371F007476A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19E104B71E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +634,7 @@
 				19E104B91E79371F007476A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19E104BA1E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +643,7 @@
 				19E104BC1E79371F007476A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
