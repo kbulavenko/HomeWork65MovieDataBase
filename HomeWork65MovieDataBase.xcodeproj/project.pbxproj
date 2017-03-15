@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E1048E1E79371E007476A3 /* AppDelegate.m */; };
+		19E104921E79371E007476A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104911E79371E007476A3 /* main.m */; };
+		19E104951E79371E007476A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104941E79371E007476A3 /* ViewController.m */; };
+		19E104971E79371E007476A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E104961E79371E007476A3 /* Assets.xcassets */; };
+		19E1049A1E79371F007476A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E104981E79371F007476A3 /* Main.storyboard */; };
+		19E104A51E79371F007476A3 /* HomeWork65MovieDataBaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104A41E79371F007476A3 /* HomeWork65MovieDataBaseTests.m */; };
+		19E104B01E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104AF1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19E104A11E79371F007476A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19E104821E79371E007476A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19E104891E79371E007476A3;
+			remoteInfo = HomeWork65MovieDataBase;
+		};
+		19E104AC1E79371F007476A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19E104821E79371E007476A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19E104891E79371E007476A3;
+			remoteInfo = HomeWork65MovieDataBase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19E1048A1E79371E007476A3 /* HomeWork65MovieDataBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork65MovieDataBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E1048D1E79371E007476A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		19E1048E1E79371E007476A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		19E104911E79371E007476A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19E104931E79371E007476A3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		19E104941E79371E007476A3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		19E104961E79371E007476A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19E104991E79371F007476A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19E1049B1E79371F007476A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19E104A01E79371F007476A3 /* HomeWork65MovieDataBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeWork65MovieDataBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E104A41E79371F007476A3 /* HomeWork65MovieDataBaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeWork65MovieDataBaseTests.m; sourceTree = "<group>"; };
+		19E104A61E79371F007476A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19E104AB1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeWork65MovieDataBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E104AF1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeWork65MovieDataBaseUITests.m; sourceTree = "<group>"; };
+		19E104B11E79371F007476A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19E104871E79371E007476A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E1049D1E79371F007476A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E104A81E79371F007476A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19E104811E79371E007476A3 = {
+			isa = PBXGroup;
+			children = (
+				19E1048C1E79371E007476A3 /* HomeWork65MovieDataBase */,
+				19E104A31E79371F007476A3 /* HomeWork65MovieDataBaseTests */,
+				19E104AE1E79371F007476A3 /* HomeWork65MovieDataBaseUITests */,
+				19E1048B1E79371E007476A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19E1048B1E79371E007476A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19E1048A1E79371E007476A3 /* HomeWork65MovieDataBase.app */,
+				19E104A01E79371F007476A3 /* HomeWork65MovieDataBaseTests.xctest */,
+				19E104AB1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19E1048C1E79371E007476A3 /* HomeWork65MovieDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				19E1048D1E79371E007476A3 /* AppDelegate.h */,
+				19E1048E1E79371E007476A3 /* AppDelegate.m */,
+				19E104931E79371E007476A3 /* ViewController.h */,
+				19E104941E79371E007476A3 /* ViewController.m */,
+				19E104961E79371E007476A3 /* Assets.xcassets */,
+				19E104981E79371F007476A3 /* Main.storyboard */,
+				19E1049B1E79371F007476A3 /* Info.plist */,
+				19E104901E79371E007476A3 /* Supporting Files */,
+			);
+			path = HomeWork65MovieDataBase;
+			sourceTree = "<group>";
+		};
+		19E104901E79371E007476A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19E104911E79371E007476A3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19E104A31E79371F007476A3 /* HomeWork65MovieDataBaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				19E104A41E79371F007476A3 /* HomeWork65MovieDataBaseTests.m */,
+				19E104A61E79371F007476A3 /* Info.plist */,
+			);
+			path = HomeWork65MovieDataBaseTests;
+			sourceTree = "<group>";
+		};
+		19E104AE1E79371F007476A3 /* HomeWork65MovieDataBaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19E104AF1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m */,
+				19E104B11E79371F007476A3 /* Info.plist */,
+			);
+			path = HomeWork65MovieDataBaseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19E104891E79371E007476A3 /* HomeWork65MovieDataBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19E104B41E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBase" */;
+			buildPhases = (
+				19E104861E79371E007476A3 /* Sources */,
+				19E104871E79371E007476A3 /* Frameworks */,
+				19E104881E79371E007476A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeWork65MovieDataBase;
+			productName = HomeWork65MovieDataBase;
+			productReference = 19E1048A1E79371E007476A3 /* HomeWork65MovieDataBase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19E1049F1E79371F007476A3 /* HomeWork65MovieDataBaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19E104B71E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseTests" */;
+			buildPhases = (
+				19E1049C1E79371F007476A3 /* Sources */,
+				19E1049D1E79371F007476A3 /* Frameworks */,
+				19E1049E1E79371F007476A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19E104A21E79371F007476A3 /* PBXTargetDependency */,
+			);
+			name = HomeWork65MovieDataBaseTests;
+			productName = HomeWork65MovieDataBaseTests;
+			productReference = 19E104A01E79371F007476A3 /* HomeWork65MovieDataBaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19E104AA1E79371F007476A3 /* HomeWork65MovieDataBaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19E104BA1E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseUITests" */;
+			buildPhases = (
+				19E104A71E79371F007476A3 /* Sources */,
+				19E104A81E79371F007476A3 /* Frameworks */,
+				19E104A91E79371F007476A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19E104AD1E79371F007476A3 /* PBXTargetDependency */,
+			);
+			name = HomeWork65MovieDataBaseUITests;
+			productName = HomeWork65MovieDataBaseUITests;
+			productReference = 19E104AB1E79371F007476A3 /* HomeWork65MovieDataBaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19E104821E79371E007476A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ItStep;
+				TargetAttributes = {
+					19E104891E79371E007476A3 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					19E1049F1E79371F007476A3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 19E104891E79371E007476A3;
+					};
+					19E104AA1E79371F007476A3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 19E104891E79371E007476A3;
+					};
+				};
+			};
+			buildConfigurationList = 19E104851E79371E007476A3 /* Build configuration list for PBXProject "HomeWork65MovieDataBase" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19E104811E79371E007476A3;
+			productRefGroup = 19E1048B1E79371E007476A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19E104891E79371E007476A3 /* HomeWork65MovieDataBase */,
+				19E1049F1E79371F007476A3 /* HomeWork65MovieDataBaseTests */,
+				19E104AA1E79371F007476A3 /* HomeWork65MovieDataBaseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19E104881E79371E007476A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
+				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E1049E1E79371F007476A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E104A91E79371F007476A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19E104861E79371E007476A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E104951E79371E007476A3 /* ViewController.m in Sources */,
+				19E104921E79371E007476A3 /* main.m in Sources */,
+				19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E1049C1E79371F007476A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E104A51E79371F007476A3 /* HomeWork65MovieDataBaseTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19E104A71E79371F007476A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19E104B01E79371F007476A3 /* HomeWork65MovieDataBaseUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19E104A21E79371F007476A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19E104891E79371E007476A3 /* HomeWork65MovieDataBase */;
+			targetProxy = 19E104A11E79371F007476A3 /* PBXContainerItemProxy */;
+		};
+		19E104AD1E79371F007476A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19E104891E79371E007476A3 /* HomeWork65MovieDataBase */;
+			targetProxy = 19E104AC1E79371F007476A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		19E104981E79371F007476A3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19E104991E79371F007476A3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19E104B21E79371F007476A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		19E104B31E79371F007476A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		19E104B51E79371F007476A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		19E104B61E79371F007476A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBase/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBase;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		19E104B81E79371F007476A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeWork65MovieDataBase.app/Contents/MacOS/HomeWork65MovieDataBase";
+			};
+			name = Debug;
+		};
+		19E104B91E79371F007476A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBaseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeWork65MovieDataBase.app/Contents/MacOS/HomeWork65MovieDataBase";
+			};
+			name = Release;
+		};
+		19E104BB1E79371F007476A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeWork65MovieDataBase;
+			};
+			name = Debug;
+		};
+		19E104BC1E79371F007476A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HomeWork65MovieDataBaseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IOS103.HomeWork65MovieDataBaseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeWork65MovieDataBase;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19E104851E79371E007476A3 /* Build configuration list for PBXProject "HomeWork65MovieDataBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E104B21E79371F007476A3 /* Debug */,
+				19E104B31E79371F007476A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19E104B41E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E104B51E79371F007476A3 /* Debug */,
+				19E104B61E79371F007476A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19E104B71E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E104B81E79371F007476A3 /* Debug */,
+				19E104B91E79371F007476A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19E104BA1E79371F007476A3 /* Build configuration list for PBXNativeTarget "HomeWork65MovieDataBaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19E104BB1E79371F007476A3 /* Debug */,
+				19E104BC1E79371F007476A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19E104821E79371E007476A3 /* Project object */;
+}
