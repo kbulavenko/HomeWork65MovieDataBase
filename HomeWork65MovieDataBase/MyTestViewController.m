@@ -1,28 +1,43 @@
 //
-//  MyViewController.m
+//  MyTestViewController.m
 //  HomeWork65MovieDataBase
 //
-//  Created by Z on 15.03.17.
+//  Created by Z on 16.03.17.
 //  Copyright © 2017 ItStep. All rights reserved.
 //
 
-#import "MyViewController1.h"
+#import "MyTestViewController.h"
 
-@interface MyViewController1 ()
+@interface MyTestViewController ()
 
 @end
 
-@implementation MyViewController1
-@synthesize tableView, btnAdd, btnDel, btnEdt;
+@implementation MyTestViewController
+@synthesize tableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-//   NSRect     frameTV   =  self.tableView.frame;
-//    self.tableView   = [[NSTableView  alloc] initWithFrame: frameTV];
+    
+  //  [self.view ];
+    self.tableView  = [[NSTableView  alloc] initWithFrame:NSMakeRect( 20, 50, 200, 200) ];
+    
+        NSDictionary    *genresDict1  = @{
+                                         @"0id" : @"ganresName",
+                                         @"0title" : @"Жанр",
+                                         };
+    
+     [self  clearTableView];
+     [self  createTableColumnsWithDictionary: genresDict1];
+    //  selftableView.dataSource = self.MTVC;
+    
+    
+    
+
+    
+    
+    [self.view addSubview: self.tableView];
 }
 
-- (IBAction)btnClick:(id)sender {
-}
 
 
 -(void)clearTableView
@@ -49,7 +64,7 @@
         TC.title    = titleTC;
         TC.headerCell.stringValue   = titleTC;
         TC.resizingMask  = NSTableColumnAutoresizingMask;
-        TC.width  = 200;
+        //TC.width  = 200;
         [self.tableView  addTableColumn: TC];
         NSLog(@"%@", self.tableView.tableColumns);
     }
@@ -57,6 +72,7 @@
     [self.tableView  reloadData];
     self.tableView.needsDisplay = YES;
 }
+
 
 
 @end

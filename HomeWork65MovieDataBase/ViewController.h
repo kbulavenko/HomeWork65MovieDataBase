@@ -8,20 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MyTableViewController.h"
-#import "MyTableViewController1.h"
+//#import "MyTableViewController1.h"
 
 #import "MyViewController.h"
-#import "MyViewController1.h"
+//#import "MyViewController1.h"
+#import "MyTestViewController.h"
+
 #import "MyDB.h"
 
 @interface ViewController : NSViewController
 
 @property  MyTableViewController  *MTVC;
-@property  MyTableViewController1  *MTVC1;
+//@property  MyTableViewController1  *MTVC1;
 @property  MyDB                     *db;
 
 @property (strong, atomic) MyViewController       *MyVCFilms;
-@property (strong, atomic) MyViewController1       *MyVCGenres;
+@property (strong, atomic) MyTestViewController       *MyVCGenres;
 @property (strong, atomic) MyViewController       *MyVCDirectors;
 
 

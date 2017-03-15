@@ -33,8 +33,8 @@
 		19ED02881E79F607005F687F /* MyViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02871E79F607005F687F /* MyViewController1.xib */; };
 		19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02891E79F61B005F687F /* MyViewController2.xib */; };
 		19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED028B1E79F62A005F687F /* MyViewController3.xib */; };
-		19ED028F1E79F7CE005F687F /* MyViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED028E1E79F7CE005F687F /* MyViewController1.m */; };
-		19ED02921E79FA81005F687F /* MyTableViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02911E79FA81005F687F /* MyTableViewController1.m */; };
+		19ED02961E7A0435005F687F /* MyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02941E7A0435005F687F /* MyTestViewController.m */; };
+		19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02981E7A0783005F687F /* MyTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,10 +93,9 @@
 		19ED02871E79F607005F687F /* MyViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController1.xib; sourceTree = "<group>"; };
 		19ED02891E79F61B005F687F /* MyViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController2.xib; sourceTree = "<group>"; };
 		19ED028B1E79F62A005F687F /* MyViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController3.xib; sourceTree = "<group>"; };
-		19ED028D1E79F7C3005F687F /* MyViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController1.h; sourceTree = "<group>"; };
-		19ED028E1E79F7CE005F687F /* MyViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController1.m; sourceTree = "<group>"; };
-		19ED02901E79FA78005F687F /* MyTableViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController1.h; sourceTree = "<group>"; };
-		19ED02911E79FA81005F687F /* MyTableViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController1.m; sourceTree = "<group>"; };
+		19ED02931E7A0435005F687F /* MyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTestViewController.h; sourceTree = "<group>"; };
+		19ED02941E7A0435005F687F /* MyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTestViewController.m; sourceTree = "<group>"; };
+		19ED02981E7A0783005F687F /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,16 +209,15 @@
 				19E104931E79371E007476A3 /* ViewController.h */,
 				19E104941E79371E007476A3 /* ViewController.m */,
 				19E104DE1E79790D007476A3 /* MyTableViewController.h */,
-				19ED02901E79FA78005F687F /* MyTableViewController1.h */,
 				19E104DF1E79790D007476A3 /* MyTableViewController.m */,
-				19ED02911E79FA81005F687F /* MyTableViewController1.m */,
 				19ED02821E79BC2A005F687F /* MyViewController.h */,
 				19ED02831E79BC2A005F687F /* MyViewController.m */,
-				19ED028D1E79F7C3005F687F /* MyViewController1.h */,
-				19ED028E1E79F7CE005F687F /* MyViewController1.m */,
+				19ED02931E7A0435005F687F /* MyTestViewController.h */,
+				19ED02941E7A0435005F687F /* MyTestViewController.m */,
 				19ED02841E79BC2A005F687F /* MyViewController.xib */,
 				19ED02891E79F61B005F687F /* MyViewController2.xib */,
 				19ED02871E79F607005F687F /* MyViewController1.xib */,
+				19ED02981E7A0783005F687F /* MyTestViewController.xib */,
 				19ED028B1E79F62A005F687F /* MyViewController3.xib */,
 			);
 			name = Controller;
@@ -358,6 +356,7 @@
 			files = (
 				19ED02881E79F607005F687F /* MyViewController1.xib in Resources */,
 				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
+				19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */,
 				19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */,
 				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
 				19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */,
@@ -393,15 +392,14 @@
 				19E104D41E793B6E007476A3 /* FMDatabaseQueue.h in Sources */,
 				19E104D51E793B6E007476A3 /* FMDB.h in Sources */,
 				19E104D61E793B6E007476A3 /* FMResultSet.h in Sources */,
-				19ED02921E79FA81005F687F /* MyTableViewController1.m in Sources */,
 				19E104951E79371E007476A3 /* ViewController.m in Sources */,
 				19E104CE1E793AF8007476A3 /* FMDatabasePool.m in Sources */,
 				19E104921E79371E007476A3 /* main.m in Sources */,
 				19E104CF1E793AF8007476A3 /* FMDatabaseQueue.m in Sources */,
 				19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */,
+				19ED02961E7A0435005F687F /* MyTestViewController.m in Sources */,
 				19ED02851E79BC2A005F687F /* MyViewController.m in Sources */,
 				19E104CC1E793AF8007476A3 /* FMDatabase.m in Sources */,
-				19ED028F1E79F7CE005F687F /* MyViewController1.m in Sources */,
 				19E104D01E793AF8007476A3 /* FMResultSet.m in Sources */,
 				19E104CD1E793AF8007476A3 /* FMDatabaseAdditions.m in Sources */,
 				19E104E01E79790D007476A3 /* MyTableViewController.m in Sources */,

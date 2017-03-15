@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MyViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="MyTestViewController">
             <connections>
                 <outlet property="btnAdd" destination="LYD-dp-pN1" id="ute-35-MO3"/>
                 <outlet property="btnDel" destination="Lca-ch-Tsa" id="6UV-Bc-BQ3"/>
@@ -50,14 +50,14 @@
                         <action selector="btnClick:" target="-2" id="OWG-Bp-weI"/>
                     </connections>
                 </button>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeM-3i-3FL">
-                    <rect key="frame" x="20" y="61" width="440" height="199"/>
+                <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeM-3i-3FL">
+                    <rect key="frame" x="20" y="61" width="440" height="33"/>
                     <clipView key="contentView" id="Thm-3N-vvI">
-                        <rect key="frame" x="1" y="0.0" width="438" height="198"/>
+                        <rect key="frame" x="1" y="0.0" width="423" height="32"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6Lf-Be-Rjt" id="1Fc-7X-kr1">
-                                <rect key="frame" x="0.0" y="0.0" width="438" height="175"/>
+                                <rect key="frame" x="0.0" y="0.0" width="423" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -85,12 +85,12 @@
                         <rect key="frame" x="1" y="183" width="438" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="rhY-Xw-8zF">
-                        <rect key="frame" x="-14" y="15" width="15" height="0.0"/>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="rhY-Xw-8zF">
+                        <rect key="frame" x="424" y="23" width="15" height="9"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" id="6Lf-Be-Rjt">
-                        <rect key="frame" x="0.0" y="0.0" width="438" height="23"/>
+                        <rect key="frame" x="0.0" y="0.0" width="423" height="23"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>

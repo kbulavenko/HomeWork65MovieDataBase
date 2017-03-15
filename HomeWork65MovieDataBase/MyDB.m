@@ -82,17 +82,8 @@
         [self->db executeUpdateWithFormat: strInsert, nameFilm, idGenre, idDirector];
         
     }
+    NSLog(@"\n\n");
     
-    FMResultSet	*result = [db executeQuery : @"SELECT * FROM films"];
-    while([result next])
-    {
-                NSLog(@"Film with ID : \t%i \tis \t%30@ \t\t%i \t%i.",
-                      [result intForColumn : @"id"],
-                      [result stringForColumn : @"name"],
-                      [result intForColumn : @"id_genre"],
-                      [result intForColumn : @"id_director"]);
-    }
-    [result close];
     [self showFilms];
     
     NSLog(@"\n\n");
@@ -102,6 +93,7 @@
     
     NSLog(@"\n\n");
     [self showFilmsWithGenresAndDirectors];
+    NSLog(@"\n\n");
     
 }
 

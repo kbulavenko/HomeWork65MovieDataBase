@@ -21,25 +21,26 @@
     NSLog(@"%@", dbPath);
     
     self.db  = [[MyDB alloc] initWithPath: dbPath];
+    [self->db makeDB];
     
     self.MTVC = [[MyTableViewController  alloc] initWithDB: self.db];
-    self.MTVC1 = [[MyTableViewController1  alloc] initWithDB: self.db];
+    self.MTVC = [[MyTableViewController  alloc] initWithDB: self.db];
     
     
     
-    self.MyVCFilms = [[MyViewController   alloc] initWithNibName: @"MyViewController1" bundle: nil];
-    self.MyVCGenres = [[MyViewController1   alloc] initWithNibName: @"MyViewController2" bundle: nil];
+    self.MyVCFilms = [[MyViewController   alloc] initWithNibName: @"MyViewController" bundle: nil];
+    self.MyVCGenres = [[MyTestViewController   alloc] initWithNibName: nil bundle: nil];
     self.MyVCDirectors = [[MyViewController   alloc] initWithNibName: @"MyViewController3" bundle: nil];
     
     
-    NSDictionary    *genresDict1  = @{
-                                     @"0id" : @"ganresName",
-                                     @"0title" : @"Жанр",
-                                     };
-    
+//    NSDictionary    *genresDict1  = @{
+//                                     @"0id" : @"ganresName",
+//                                     @"0title" : @"Жанр",
+//                                     };
+//    
    // [self.MyVCGenres  clearTableView];
-    [self.MyVCGenres  createTableColumnsWithDictionary: genresDict1];
-    self.MyVCGenres.tableView.dataSource = self.MTVC;
+   // [self.MyVCGenres  createTableColumnsWithDictionary: genresDict1];
+  //  self.MyVCGenres.tableView.dataSource = self.MTVC;
     
 
     
@@ -84,15 +85,7 @@
 
     [NSThread  sleepForTimeInterval: 0.5];
     
-    NSDictionary    *genresDict  = @{
-                                     @"0id" : @"ganresName",
-                                     @"0title" : @"Жанр",
-                                     };
     
-   // [self.MyVCGenres  clearTableView];
-    [self.MyVCGenres  createTableColumnsWithDictionary: genresDict];
-    self.MyVCGenres.tableView.dataSource = self.MTVC;
-
     
     
     NSDictionary    *filmsDict  = @{
@@ -111,7 +104,7 @@
    
     NSDictionary    *directorsDict  = @{
                                      @"0id" : @"directorsName",
-                                     @"0title" : @"Режиссер",
+                                     @"0title" : @"Режиссер2222"
                                      };
     
     [self.MyVCDirectors  clearTableView];
@@ -120,16 +113,30 @@
 
     
     
-    NSTableColumn   *TC   =   [[NSTableColumn  alloc] initWithIdentifier: @"ganresName"];
-    TC.title    = @"Title Жанр";
-    TC.headerCell.stringValue   = @"headerCell Жанр";
-    TC.resizingMask  = NSTableColumnAutoresizingMask;
-    TC.width  = 300;
-    [self.MyVCGenres.tableView  addTableColumn: TC];
+    
+    
+    
+//    NSTableColumn   *TC   =   [[NSTableColumn  alloc] initWithIdentifier: @"ganresName"];
+//    TC.title    = @"Title Жанр";
+//    TC.headerCell.stringValue   = @"headerCell Жанр";
+//    TC.resizingMask  = NSTableColumnAutoresizingMask;
+//    TC.width  = 300;
+//    [self.MyVCGenres.tableView  addTableColumn: TC];
 
     
+//    self.MyVCGenres.tableView.dataSource = self.MTVC;
+//    self.MyVCDirectors.tableView.dataSource = self.MTVC;
+
+    
+    
+    NSDictionary    *genresDict  = @{
+                                     @"0id" : @"ganresName",
+                                     @"0title" : @"Жанр1111"
+                                     };
+    
+    [self.MyVCGenres  clearTableView];
+    [self.MyVCGenres  createTableColumnsWithDictionary: genresDict];
     self.MyVCGenres.tableView.dataSource = self.MTVC;
-    self.MyVCDirectors.tableView.dataSource = self.MTVC;
 
     
     

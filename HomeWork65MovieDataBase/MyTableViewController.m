@@ -25,7 +25,7 @@
         }
         else
         {
-            [self->_myDB makeDB];
+           // [self->_myDB makeDB];
         }
     }
     return self;
