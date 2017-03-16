@@ -34,8 +34,10 @@
 }
 
 
--(void)makeDB
+-(void)makeDBWithNum: (int) num
 {
+    if(num <=0 )  return;
+    
     NSString   *createFilms = @"CREATE TABLE IF NOT EXISTS films ( id integer not null primary key autoincrement, name text, id_genre integer,      id_director     integer,  FOREIGN KEY  (id_genre)  REFERENCES    genres (id) ON DELETE     NO ACTION  ON UPDATE       CASCADE, FOREIGN KEY  (id_director)  REFERENCES    directors (id)  ON DELETE     NO ACTION      ON UPDATE      CASCADE      );   ";
     NSString   *createGenres = @"CREATE TABLE  IF NOT EXISTS genres (id integer not null primary key autoincrement, genresName text);";
     NSString   *createDirectors = @"CREATE TABLE  IF NOT EXISTS directors (id integer not null primary key autoincrement, directorsName text);";
@@ -74,7 +76,7 @@
     
     
     strInsert  = @"INSERT INTO films (name, id_genre, id_director) VALUES (%@ , %i, %i);";
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < num; i++)
     {
         NSString *nameFilm = randomMovie().copy;
         int       idDirector  = rand() % directorsCount;
@@ -84,12 +86,12 @@
     }
     NSLog(@"\n\n");
     
-    [self showFilms];
+   // [self showFilms];
     
     NSLog(@"\n\n");
-    [self showGenres];
+ //   [self showGenres];
     NSLog(@"\n\n");
-    [self showDirectors];
+  //  [self showDirectors];
     
     NSLog(@"\n\n");
     [self showFilmsWithGenresAndDirectors];
@@ -113,12 +115,6 @@
     
     
 }
-
-
-
-
-
-
 
 
 -(void)showFilms
@@ -163,6 +159,74 @@
               );
     }
     [result close];
+}
+
+
+-(NSMutableArray<NSDictionary *> *) getFilms
+{
+    NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
+    NSString    *selectStr = @"SELECT films.name, genres.genresName, directors.directorsName FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id;";
+    
+    FMResultSet  *result   =  [self->db executeQuery:   selectStr];
+    while ([result next])
+    {
+        NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"name"]),
+                                  @"filmsGenre"   :   [result stringForColumn     : @"genresName"],
+                                  @"filmsDirector" :   ([result stringForColumn      : @"directorsName"])
+                                  };
+        [arr  addObject: dict];
+       //  NSLog(@"dict = %@", dict);
+        
+    }
+    [result close];
+
+    
+    return arr;
+}
+
+
+
+-(NSMutableArray<NSDictionary *> *) getGenres
+{
+    NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
+    NSString    *selectStr = @"SELECT * FROM genres;";
+    
+    FMResultSet  *result   =  [self->db executeQuery:   selectStr];
+    while ([result next])
+    {
+        NSDictionary *dict  =  @{ @"genresName"     :   ([result stringForColumn      : @"genresName"])
+                                  };
+        [arr  addObject: dict];
+      //  NSLog(@"dict = %@", dict);
+        
+    }
+    [result close];
+    
+    
+    return arr;
+}
+
+
+
+
+-(NSMutableArray<NSDictionary *> *) getDirectors
+{
+    NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
+    NSString    *selectStr = @"SELECT * FROM directors;";
+    
+    FMResultSet  *result   =  [self->db executeQuery:   selectStr];
+    while ([result next])
+    {
+        NSDictionary *dict  =  @{ @"directorsName"     :   ([result stringForColumn      : @"directorsName"]),
+                                  };
+        [arr  addObject: dict];
+      //  NSLog(@"dict = %@", dict);
+        
+    }
+    [result close];
+    
+    
+    return arr;
 }
 
 
