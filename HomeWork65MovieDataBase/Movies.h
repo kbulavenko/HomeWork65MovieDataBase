@@ -127,7 +127,10 @@ NSString * randomMovie()
         @"Чужие против Хищника: Реквием (2007)",
         @"Жажда (1979)",
         @"Отроки во вселенной (1974)",
-        @"Луна 44 (1990)"
+        @"Луна 44 (1990)",
+        @"Унесённые призраками (яп. 千と千尋の神隠し Сэн то Тихиро но Камикакуси)",
+        @"Ветер крепчает (Kaze tachinu) (яп. 風立ちぬ Кадзэ: тачину)"
+        
     ];
     return  [movies objectAtIndex: (NSUInteger)(rand() % (movies.count)) ];
 
@@ -184,7 +187,8 @@ NSString * directorByNumber( NSUInteger num)
                             @"Роберт Земекис",
                             @"Рене Лалу",
                             @"Роберт Уайз",
-                            @"Жорж Мельес"
+                            @"Жорж Мельес",
+                            @"宮崎 駿"
                             ];
     return (num>= directors.count)? nil:[directors objectAtIndex: num ];
 }

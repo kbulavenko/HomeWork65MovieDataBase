@@ -79,8 +79,8 @@
     for (int i = 0; i < num; i++)
     {
         NSString *nameFilm = randomMovie().copy;
-        int       idDirector  = rand() % directorsCount;
-        int       idGenre  = rand() % genresCount;
+        int       idDirector  = rand() % (directorsCount +1 );
+        int       idGenre  = rand() % (genresCount + 1 );
         [self->db executeUpdateWithFormat: strInsert, nameFilm, idGenre, idDirector];
         
     }
