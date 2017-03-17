@@ -34,7 +34,7 @@
 }
 
 
--(void)makeDBWithNum: (int) num
+-(void)makeDBWithNum: (NSInteger) num
 {
     if(num <=0 )  return;
     
@@ -230,6 +230,40 @@
 }
 
 
+-(NSMutableArray<NSDictionary *> *) getFilmsFromStart: (NSInteger) startRow numRow: (NSInteger) numRow
+{
+    NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
+    NSString    *selectStr = [NSString  stringWithFormat: @"SELECT films.name, genres.genresName, directors.directorsName FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id LIMIT %li, %li;", startRow, numRow];
+    
+    FMResultSet  *result   =  [self->db executeQuery:   selectStr];
+    while ([result next])
+    {
+        NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"name"]),
+                                  @"filmsGenre"   :   [result stringForColumn     : @"genresName"],
+                                  @"filmsDirector" :   ([result stringForColumn      : @"directorsName"])
+                                  };
+        [arr  addObject: dict];
+        //  NSLog(@"dict = %@", dict);
+        
+    }
+    [result close];
+    
+    
+    return arr;
+}
+
+-(NSInteger)getFilmsCount
+{
+    NSUInteger   retValue = 0;
+    NSString    *selectStr = [NSString  stringWithFormat: @"SELECT  COUNT(*) AS cnt FROM films;"];
+    FMResultSet *result  =  [self->db executeQuery: selectStr];
+    if([result next])
+    {
+    retValue = [result longForColumn:@"cnt"];
+    }
+    
+    return retValue;
+}
 
 
 

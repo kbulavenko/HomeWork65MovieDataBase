@@ -10,13 +10,26 @@
 #import <Cocoa/Cocoa.h>
 #import "MyDB.h"
 
-@interface MyTableViewController : NSObject<NSTableViewDataSource>
 
+
+
+// Switch YES NO to select partially buffered (YES) or full buffered mode DB reading
+#define BUFFERED  YES;
+
+
+
+
+@interface MyTableViewController : NSObject<NSTableViewDataSource>
+{
+    NSInteger                          startRow;      // Начальный номер строки в базе
+    NSInteger                          countRows;     // Количество строк в буфере
+    NSMutableArray<NSDictionary *>      *filmsBuffer;   // Буфер
+}
 
 @property   (strong) MyDB   *myDB;
 @property   (strong) NSMutableArray<NSDictionary *>    *films;
-@property  (strong)  NSMutableArray<NSDictionary *>    *genres;
-@property  (strong) NSMutableArray<NSDictionary *>    *directors;
+@property   (strong)  NSMutableArray<NSDictionary *>   *genres;
+@property   (strong) NSMutableArray<NSDictionary *>    *directors;
 
 
 

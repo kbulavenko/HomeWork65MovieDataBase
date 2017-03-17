@@ -22,7 +22,7 @@
     NSLog(@"%@", dbPath);
     
     self.db  = [[MyDB alloc] initWithPath: dbPath];
-   // [self->db makeDBWithNum: 100000];
+   // [self->db makeDBWithNum: 300000];
     
 
     
