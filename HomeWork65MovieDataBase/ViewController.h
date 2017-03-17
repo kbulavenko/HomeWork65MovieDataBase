@@ -10,25 +10,26 @@
 #import "MyTableViewController.h"
 //#import "MyTableViewController1.h"
 
-//#import "MyViewController.h"
+#import "MyViewController.h"
 //#import "MyViewController1.h"
 //#import "MyTestViewController.h"
-#import "MyTestViewController.h"
+//#import "MyTestViewController.h"
 
 #import "MyDB.h"
 
 @interface ViewController : NSViewController
 
-@property  MyTableViewController  *MTVCfilms;
-@property  MyTableViewController  *MTVCgenres;
-@property  MyTableViewController  *MTVCdirectors;
+//@property  MyTableViewController  *MTVCfilms;
+//@property  MyTableViewController  *MTVCgenres;
+//@property  MyTableViewController  *MTVCdirectors;
+@property  MyTableViewController  *MTVC;
 
 //@property  MyTableViewController1  *MTVC1;
 @property  MyDB                     *db;
 
-@property (strong ) MyTestViewController       *MyVCFilms;
-@property (strong) MyTestViewController       *MyVCGenres;
-@property (strong) MyTestViewController       *MyVCDirectors;
+@property (strong ) MyViewController       *MyVCFilms;
+@property (strong) MyViewController       *MyVCGenres;
+@property (strong) MyViewController       *MyVCDirectors;
 
 @property (strong) NSTabViewItem   *filmsItem;
 @property (strong) NSTabViewItem   *genresItem;

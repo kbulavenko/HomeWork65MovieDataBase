@@ -20,20 +20,20 @@
    
     NSLog(@"MyViewController viewDidLoad");
    // NSRect     frameTV   =  self.tableView.frame;
-    NSRect frameTV   = NSMakeRect( 30, 30, 100, 100);
-    self->tableView   = [[NSTableView  alloc] initWithFrame: frameTV];
+  //  NSRect frameTV   = NSMakeRect( 30, 30, 100, 100);
+ //   self->tableView   = [[NSTableView  alloc] initWithFrame: frameTV];
     
    // self.tableView   =  [NSTableView new];
     
-    NSTableColumn   *TC   =   [[NSTableColumn  alloc] initWithIdentifier: @"id_test"];
-    TC.title    = @"title_test";
-    TC.headerCell.stringValue   = @"header_test";
-    TC.resizingMask  = NSTableColumnAutoresizingMask;
-    //TC.width  = 200;
-    [self.tableView  addTableColumn: TC];
-
-    [self.view addSubview: self.tableView];
-    
+//    NSTableColumn   *TC   =   [[NSTableColumn  alloc] initWithIdentifier: @"id_test"];
+//    TC.title    = @"title_test";
+//    TC.headerCell.stringValue   = @"header_test";
+//    TC.resizingMask  = NSTableColumnAutoresizingMask;
+//    //TC.width  = 200;
+//    [self.tableView  addTableColumn: TC];
+//
+//    [self.view addSubview: self.tableView];
+//    
     
    // [self.tableView  addSubview: self->tableView1];
     
@@ -66,8 +66,15 @@
         NSTableColumn   *TC   =   [[NSTableColumn  alloc] initWithIdentifier: identifierTC];
         TC.title    = titleTC;
         TC.headerCell.stringValue   = titleTC;
-        TC.resizingMask  = NSTableColumnAutoresizingMask;
-        //TC.width  = 200;
+        TC.resizingMask  = NSTableColumnAutoresizingMask | NSTableColumnUserResizingMask;
+        TC.width  = 150;
+        if([titleTC  isEqualToString:@"Название"])
+        {
+           TC.width  = 250;
+        }
+            
+        
+        
         NSLog(@"TC= %@", TC);
         [self.tableView  addTableColumn: TC];
         NSLog(@"TC= %@, self.tableView = %@", TC, self.tableView);
