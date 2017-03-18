@@ -7,11 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MyDB.h"
+#import "MyTableViewController.h"
+#import "MyOneRowView.h"
 
 @interface MyViewController : NSViewController
 {
  //   NSTableView   *tableView1;
    // NSTableView   *tableView;
+    MyTableViewController      *MTVC;
     
 }
 @property (weak) IBOutlet NSTableView *tableView;
@@ -29,6 +33,6 @@
 -(void)clearTableView;
 
 -(void)createTableColumnsWithDictionary: (NSDictionary *) dict;
-
+-(void)setMTVC : (MyTableViewController *) m;
 
 @end

@@ -14,7 +14,7 @@
 
 
 // Switch YES NO to select partially buffered (YES) or full buffered mode DB reading
-#define BUFFERED  YES;
+#define BUFFEREDTV  YES
 
 
 
@@ -34,6 +34,10 @@
 
 
 - (instancetype)initWithDB: (MyDB *) db1;
+
+-(void) deleteRow: (NSInteger) index;
+-(void) addRow : (NSDictionary *) dict;
+-(void) editRow: (NSDictionary *) dict;
 
 
 @end

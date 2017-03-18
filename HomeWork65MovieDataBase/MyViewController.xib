@@ -56,7 +56,7 @@
                         <rect key="frame" x="1" y="0.0" width="438" height="198"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="6Lf-Be-Rjt" id="1Fc-7X-kr1">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" headerView="6Lf-Be-Rjt" id="1Fc-7X-kr1">
                                 <rect key="frame" x="0.0" y="0.0" width="438" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>

@@ -26,18 +26,18 @@
         else
         {
            /////////////////////////////////////////////////////////////// [self.myDB makeDB];
-            //self->films  = [NSMutableArray array];
-            self->startRow  = 0;
-            self->countRows = 500;
+            self->films  = [NSMutableArray array];
+            self->filmsBuffer  = [NSMutableArray array];
             
-            //self->films  = [self->myDB getFilmsFromStart: self->startRow numRow: self->countRows];
-    self->filmsBuffer   = [self->myDB getFilmsFromStart: self->startRow numRow: self->countRows];
-           // self->genres  = [NSMutableArray   array];
-           // self->directors  = [NSMutableArray   array];
+            self->startRow  = -5000;
+            NSInteger   dbCount  = [self.myDB getFilmsCount];
+            NSLog(@"[self.myDB getFilmsCount] = %li", dbCount);
+            self->countRows = (dbCount >= 100000) ? 5000  :(dbCount >= 10000) ?  1000 : 100 ;
+            
+              if( BUFFEREDTV == NO )    self->films  = [self->myDB getFilms];
+  // if(BUFFEREDTV == YES)  self->filmsBuffer   = [self->myDB getFilmsFromStart: 0 numRow: self->countRows];
             self.genres  = [self.myDB getGenres];
             self.directors  = [self.myDB getDirectors];
-            
-          //  NSLog(@"self.genres  = %@", self.genres);
         }
     }
     return self;
@@ -51,8 +51,8 @@
     if([ tableView.identifier isEqualToString: @"TableViewIdFilms"])
     {
         
-        return [self->myDB  getFilmsCount];
-        return films.count;
+        if(BUFFEREDTV == YES)    return [self->myDB  getFilmsCount] ;
+        if(BUFFEREDTV == NO)   return films.count;
     }
     else if([ tableView.identifier isEqualToString: @"TableViewIdGenres"])
     {
@@ -62,27 +62,37 @@
     {
         return directors.count;
     }
-    return  100;
+    return  1;
 }
 
 - (nullable id)tableView:(NSTableView *)tableView objectValueForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row
 {
     //NSLog(@"objectValueForTableColumn  tableColumn.identifier = %@", tableColumn.identifier);
-    NSDictionary	*dictFilm	= [self getRowAtIndex : (int)row];
+    NSDictionary	*dictFilm;
+    
+    if( BUFFEREDTV == YES )
+    {
+        dictFilm	= [self getRowAtIndex : row ];
+       // if(dictFilm == nil)  return @"NIL!!! ???";
+    }
+    
     
     if([ tableView.identifier isEqualToString: @"TableViewIdFilms"])
     {
-        return dictFilm[tableColumn.identifier]  ;
-        //return [films objectAtIndex: row][tableColumn.identifier]  ;
+        if(BUFFEREDTV == YES)  if(dictFilm == nil)  return @"NIL!!! ???";
+
+        
+        if(BUFFEREDTV == YES)  return dictFilm[tableColumn.identifier]  ;
+         if( BUFFEREDTV == NO )     return [films objectAtIndex: row][tableColumn.identifier]  ;
     }
     else if([ tableView.identifier isEqualToString: @"TableViewIdGenres"])
     {
       //  NSLog(@"[genres objectAtIndex: row = %li][tableColumn.identifier = %@] = %@", row,tableColumn.identifier,[genres objectAtIndex: row][tableColumn.identifier]);
-        return [genres objectAtIndex: row][tableColumn.identifier]  ;
+        return ([genres objectAtIndex: row][tableColumn.identifier] == nil)? @"NIL ????" : [genres objectAtIndex: row][tableColumn.identifier] ;
     }
     else if([ tableView.identifier isEqualToString: @"TableViewIdDirectors"])
     {
-        return [directors objectAtIndex: row][tableColumn.identifier]  ;
+        return ( [directors objectAtIndex: row][tableColumn.identifier] == nil)? @"Direct_NIL????" :[directors objectAtIndex: row][tableColumn.identifier] ;
     }
     return	@"N/A";
 }
@@ -104,14 +114,43 @@
 
 -(void) reloadBuffer  : (NSInteger) startIndex
 {
-   
-    [self->filmsBuffer removeAllObjects];
+  //  NSLog(@"reloadBuffer, startIndex = %li", startIndex);
+    //[self->filmsBuffer removeAllObjects];
+    self->filmsBuffer = [NSMutableArray<NSDictionary *> array];
      self->startRow  = startIndex;
     
-    [self->filmsBuffer addObjectsFromArray: [self.myDB   getFilmsFromStart: startRow numRow: self->countRows]];
-
+    [self->filmsBuffer addObjectsFromArray: [self.myDB   getFilmsFromStart: self->startRow numRow: self->countRows]];
+  //  NSLog(@"self->startRow = %li, self->filmsBuffer.count = %li", self->startRow, self->filmsBuffer.count);
 }
 
+-(void) deleteRow: (NSInteger) index
+{
+    NSDictionary    *dict  = [self getRowAtIndex: index];
+    [self->myDB.db executeUpdate: @"DELETE FROM films WHERE id = ?", [dict objectForKey:@"filmsId"]];
+    //[self->arrRow removeObject: dict];
+    [self reloadBuffer: self->startRow];
+}
+
+
+
+-(void) addRow : (NSDictionary *) dict
+{
+/*    //    NSDictionary    *dict  = [self getRowAtIndex: index];
+    [self->db executeUpdate: self->cmdInsert, [dict objectForKey:@"name"],[dict objectForKey:@"weight"],[dict objectForKey:@"price"]];
+    //[self->arrRow removeObject: dict];
+    [self reloadBuffer: self->startRow];
+ */
+}
+
+-(void) editRow: (NSDictionary *) dict
+{
+/*
+    // NSDictionary    *dict  = [self getRowAtIndex: index];
+    [self->db executeUpdate: self->cmdUpdate, [dict objectForKey:@"name"],[dict objectForKey:@"weight"],[dict objectForKey:@"price"],[dict objectForKey:@"id"]];
+    //[self->arrRow removeObject: dict];
+    [self reloadBuffer: self->startRow];
+ */
+}
 
 
 @end

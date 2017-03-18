@@ -26,5 +26,6 @@
 -(NSMutableArray<NSDictionary *> *) getDirectors;
 -(NSMutableArray<NSDictionary *> *) getFilmsFromStart: (NSInteger) startRow numRow: (NSInteger) numRow;
 -(NSInteger)getFilmsCount;
+-(void)dbReopen;
 
 @end

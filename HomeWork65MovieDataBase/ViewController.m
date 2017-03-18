@@ -22,8 +22,8 @@
     NSLog(@"%@", dbPath);
     
     self.db  = [[MyDB alloc] initWithPath: dbPath];
-   // [self->db makeDBWithNum: 300000];
-    
+    //[self->db makeDBWithNum: 300013];
+   // [self->db dbReopen];
 
     
     
@@ -35,8 +35,6 @@
         NSLog(@"Data Source Nil");
         exit(1);
     }
-    
-    
     
     //  Begin
     
@@ -70,6 +68,8 @@
     //     Create tab  Films
     
     self.MyVCFilms      = [[MyViewController   alloc] initWithNibName: nil bundle: nil ];
+    
+    
     self.filmsItem          = [NSTabViewItem tabViewItemWithViewController: self.MyVCFilms];
     self.filmsItem.identifier        =  @"films";
     self.filmsItem.label             =  @"Таблица Фильмов";
@@ -85,6 +85,8 @@
     
     //     Create tab  Genres
     self.MyVCGenres     = [[MyViewController   alloc] initWithNibName: nil bundle: nil];
+   
+    
     self.genresItem         = [NSTabViewItem tabViewItemWithViewController: self.MyVCGenres];
     self.genresItem.identifier       =  @"genres";
     self.genresItem.label            =  @" Таблица Жанров";
@@ -103,6 +105,8 @@
     
     //     Create tab  Directors
      self.MyVCDirectors  = [[MyViewController   alloc] initWithNibName: nil bundle: nil ];
+    
+    
     self.directorsItem      = [NSTabViewItem tabViewItemWithViewController: self.MyVCDirectors];
     self.directorsItem.identifier    =  @"directors";
     self.directorsItem.label         =  @"Таблица Режиссеров";
@@ -124,19 +128,19 @@
     
     //   Задаем Источники данных TableView
     
+    [self.MyVCFilms setMTVC: self.MTVC];
+    [self.MyVCGenres setMTVC: self.MTVC];
+    [self.MyVCDirectors setMTVC: self.MTVC];
+    
+    
     self.MyVCFilms.tableView.dataSource     = self.MTVC;
     self.MyVCDirectors.tableView.dataSource = self.MTVC;
     self.MyVCGenres.tableView.dataSource    = self.MTVC;
     
   //////////    END   ---------------------------------   **********************
-  
    
     //  NSLog(@"%@ %@ %@ %@ %@ %@ ", filmsItem, genresItem, directorsItem, MyVCFilms, MyVCGenres, MyVCDirectors);
     //
-    
-    
-
-    
     
     
 }

@@ -74,16 +74,82 @@
         directorsCount++;
     }
     
-    
     strInsert  = @"INSERT INTO films (name, id_genre, id_director) VALUES (%@ , %i, %i);";
+    NSString   *strInsertBuf  = @"INSERT INTO films (name, id_genre, id_director) VALUES (\'%@\' , %i, %i);";
+    
+    NSMutableArray<NSString *>    *bufferWriting = [NSMutableArray<NSString *>  array];
+    
+    NSInteger  stop = (num >= 300000)? 30000 :(num >= 100000)? 10000 : (num >= 10000)? 1000 : (num >= 1000)? 100 : 10 ;
+    
+    //NSString *nameFilm;
+    NSLog(@"Start DB writing cycle");
+   
+    /*
+    
+    
     for (int i = 0; i < num; i++)
     {
         NSString *nameFilm = randomMovie().copy;
         int       idDirector  = rand() % (directorsCount +1 );
         int       idGenre  = rand() % (genresCount + 1 );
-        [self->db executeUpdateWithFormat: strInsert, nameFilm, idGenre, idDirector];
+        if( ! [self->db executeUpdateWithFormat: strInsert, nameFilm, idDirector, idGenre ])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+    }
+    */
+    
+    for (int i = 1; i <= num; i++)
+    {
+        NSString *nameFilm = randomMovie().copy;
+        int       idDirector  = 1+ rand() % (directorsCount  );
+        int       idGenre  = 1 + rand() % (genresCount  );
+        [bufferWriting  addObject: [NSString stringWithFormat: strInsertBuf,nameFilm, idGenre, idDirector]];
+        
+        
+        
+        if(bufferWriting.count % stop == 0)
+        {
+            NSLog(@"i = %i",i);
+           // [self.db  beginTransaction];
+            for (NSInteger i = 0; i < bufferWriting.count; i++)
+            {
+               
+                if( ! [self->db executeUpdateWithFormat: [bufferWriting objectAtIndex: i]])
+               {
+                   NSLog(@"%@", self->db.lastError);
+               }
+                
+
+            }
+           // [self.db  commit];
+            
+            bufferWriting = [NSMutableArray<NSString *>  array];
+        }
+        
+        
+        
         
     }
+    NSLog(@"Next cycle beginning bufferWriting.count = %li", bufferWriting.count);
+    [self.db  beginTransaction];
+
+    for (NSInteger i = 0; i < bufferWriting.count; i++)
+    {
+        
+        if(![self->db executeUpdateWithFormat: [bufferWriting objectAtIndex: i]])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+
+
+    }
+     [self.db  commit];
+    bufferWriting = [NSMutableArray<NSString *>  array];
+    
+    
+    NSLog(@"END base writing. Base.count = %li", [self getFilmsCount]);
+    
     NSLog(@"\n\n");
     
    // [self showFilms];
@@ -94,7 +160,7 @@
   //  [self showDirectors];
     
     NSLog(@"\n\n");
-    [self showFilmsWithGenresAndDirectors];
+   // [self showFilmsWithGenresAndDirectors];
     NSLog(@"\n\n");
     
 }
@@ -233,21 +299,42 @@
 -(NSMutableArray<NSDictionary *> *) getFilmsFromStart: (NSInteger) startRow numRow: (NSInteger) numRow
 {
     NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
-    NSString    *selectStr = [NSString  stringWithFormat: @"SELECT films.name, genres.genresName, directors.directorsName FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id LIMIT %li, %li;", startRow, numRow];
+  //  NSInteger     filmsCount  = [self getFilmsCount];
+//    if(startRow + numRow >=  filmsCount)
+//    {
+//        numRow = filmsCount - 1 -startRow;
+//        NSLog(@"numRow = %li", numRow);
+//    }
+  //  NSLog(@"getFilmsFromStart startRow = %li numRow = %li", numRow, startRow);
+    NSString    *selectStr = @"SELECT films.id AS fd,films.name AS fN, genres.genresName AS gN, directors.directorsName AS dN  FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id LIMIT ?, ?;";
     
-    FMResultSet  *result   =  [self->db executeQuery:   selectStr];
+    FMResultSet  *result   =  [self->db executeQuery:   selectStr, @(startRow), @(numRow)];
     while ([result next])
     {
-        NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"name"]),
-                                  @"filmsGenre"   :   [result stringForColumn     : @"genresName"],
-                                  @"filmsDirector" :   ([result stringForColumn      : @"directorsName"])
+        NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"fN"]),
+                                  @"filmsGenre"   :   [result stringForColumn     : @"gN"],
+                                  @"filmsDirector" :   ([result stringForColumn      : @"dN"]),
+                                  @"filmsId" :   @([result longForColumn      : @"fd"])
                                   };
         [arr  addObject: dict];
         //  NSLog(@"dict = %@", dict);
         
     }
     [result close];
-    
+    if(arr.count == 0) {
+        NSLog(@"!!!!!!!!!!!!!!!!!!     Из базы идет нулевой массив");
+//        for (NSInteger i = 0; i < numRow; i++)
+//        {
+//            
+//            
+//            NSDictionary *dict  =  @{ @"filmsName"     :  @" ",
+//                                      @"filmsGenre"   :   @"  ",
+//                                      @"filmsDirector" :   @"   "
+//                                      };
+//            [arr addObject: dict];
+//        }
+
+    }
     
     return arr;
 }
@@ -255,21 +342,32 @@
 -(NSInteger)getFilmsCount
 {
     NSUInteger   retValue = 0;
-    NSString    *selectStr = [NSString  stringWithFormat: @"SELECT  COUNT(*) AS cnt FROM films;"];
+   // NSString    *selectStr =  @"SELECT  COUNT(*) AS cnt FROM  (SELECT films.name , genres.genresName , directors.directorsName  FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id )  filmsAll;";
+    
+    NSString    *selectStr =  @"SELECT  COUNT(*) AS cnt FROM  films;";
+    
+    
     FMResultSet *result  =  [self->db executeQuery: selectStr];
     if([result next])
     {
     retValue = [result longForColumn:@"cnt"];
     }
-    
+  //  NSLog(@"retValue = %li", retValue);
+    if(retValue == 0) exit (1);
     return retValue;
 }
 
-
+-(void)dbReopen
+{
+    [self.db close];
+    [self.db open];
+}
 
 -(void)dealloc
 {
+    NSLog(@"MyDB Dealloc");
     [self->db close];
+    
 }
 
 
