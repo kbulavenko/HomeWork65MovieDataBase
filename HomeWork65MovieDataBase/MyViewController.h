@@ -6,6 +6,7 @@
 //  Copyright © 2017 ItStep. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 #import "MyDB.h"
 #import "MyTableViewController.h"
@@ -16,6 +17,8 @@
  //   NSTableView   *tableView1;
    // NSTableView   *tableView;
     MyTableViewController      *MTVC;
+    MyOneRowView               *MORV;
+    NSInteger                  selectedId;
     
 }
 @property (weak) IBOutlet NSTableView *tableView;

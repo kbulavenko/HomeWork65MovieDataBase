@@ -8,6 +8,7 @@
 
 #import "MyDB.h"
 #import "Movies.h"
+#import <Cocoa/Cocoa.h>
 
 @implementation MyDB
 @synthesize db;
@@ -21,11 +22,27 @@
         self->db = [FMDatabase databaseWithPath: p];
         if(self->db != nil)
         {
-            if([self->db open] == NO)
+            if([self->db open] == NO){
+                NSLog(@"Не удалось открыть базу!");
                 return nil;
+            }
+            NSLog(@"База %@ открылась ", p);
+            self->MyDBAddRowDictionary   = @{
+                                             @"films"     :   @"INSERT INTO films (name, id_genre, id_director) VALUES (?, (SELECT id FROM genres WHERE genresName = ?) , (SELECT id FROM directors WHERE directorsName = ?))",
+                                             @"genres"     :   @"INSERT INTO genres (genresName) VALUES (?)",
+                                             @"directors"     :   @"INSERT INTO directors (directorsName) VALUES (?)"
+                                             
+                                             };
+            self->MyDBSetRowDictionary   = @{
+                                             @"films"     :   @"UPDATE films SET name = ?, id_genre = (SELECT id FROM genres WHERE genresName = ?), id_director = (SELECT id FROM directors WHERE directorsName = ?) WHERE id = ? ;",
+                                             @"genres"     :   @"UPDATE genres SET genresName = ?  WHERE id = ? ;",
+                                             @"directors"     :   @"UPDATE directors SET directorsName= ?  WHERE id = ? ;"
+                                             
+                                             };
         }
         else
         {
+            NSLog(@"Ошибка создания FMDataBase");
             return nil;
         }
         
@@ -37,6 +54,7 @@
 -(void)makeDBWithNum: (NSInteger) num
 {
     if(num <=0 )  return;
+    
     
     NSString   *createFilms = @"CREATE TABLE IF NOT EXISTS films ( id integer not null primary key autoincrement, name text, id_genre integer,      id_director     integer,  FOREIGN KEY  (id_genre)  REFERENCES    genres (id) ON DELETE     NO ACTION  ON UPDATE       CASCADE, FOREIGN KEY  (id_director)  REFERENCES    directors (id)  ON DELETE     NO ACTION      ON UPDATE      CASCADE      );   ";
     NSString   *createGenres = @"CREATE TABLE  IF NOT EXISTS genres (id integer not null primary key autoincrement, genresName text);";
@@ -79,7 +97,7 @@
     
     NSMutableArray<NSString *>    *bufferWriting = [NSMutableArray<NSString *>  array];
     
-    NSInteger  stop = (num >= 300000)? 30000 :(num >= 100000)? 10000 : (num >= 10000)? 1000 : (num >= 1000)? 100 : 10 ;
+    NSInteger  stop = (num >= 300000)? 30000 :(num >= 100000)? 10000 : (num >= 10000)? 1000 : (num >= 1000)? 200 : 50 ;
     
     //NSString *nameFilm;
     NSLog(@"Start DB writing cycle");
@@ -231,14 +249,16 @@
 -(NSMutableArray<NSDictionary *> *) getFilms
 {
     NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
-    NSString    *selectStr = @"SELECT films.name, genres.genresName, directors.directorsName FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id;";
+    NSString    *selectStr = @"SELECT films.id,films.name, genres.genresName, directors.directorsName FROM films, genres, directors WHERE films.id_genre = genres.id AND films.id_director = directors.id;";
     
     FMResultSet  *result   =  [self->db executeQuery:   selectStr];
     while ([result next])
     {
         NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"name"]),
-                                  @"filmsGenre"   :   [result stringForColumn     : @"genresName"],
-                                  @"filmsDirector" :   ([result stringForColumn      : @"directorsName"])
+                                  @"filmsGenre"    :   [result stringForColumn       : @"genresName"],
+                                  @"filmsDirector" :   ([result stringForColumn      : @"directorsName"]),
+                                  @"id" :   @([result longForColumn      : @"id"])
+
                                   };
         [arr  addObject: dict];
        //  NSLog(@"dict = %@", dict);
@@ -260,7 +280,8 @@
     FMResultSet  *result   =  [self->db executeQuery:   selectStr];
     while ([result next])
     {
-        NSDictionary *dict  =  @{ @"genresName"     :   ([result stringForColumn      : @"genresName"])
+        NSDictionary *dict  =  @{ @"genresName"     :   ([result stringForColumn      : @"genresName"]),
+                                  @"id" :   @([result longForColumn      : @"id"])
                                   };
         [arr  addObject: dict];
       //  NSLog(@"dict = %@", dict);
@@ -271,9 +292,6 @@
     
     return arr;
 }
-
-
-
 
 -(NSMutableArray<NSDictionary *> *) getDirectors
 {
@@ -284,6 +302,7 @@
     while ([result next])
     {
         NSDictionary *dict  =  @{ @"directorsName"     :   ([result stringForColumn      : @"directorsName"]),
+                                  @"id" :   @([result longForColumn      : @"id"])
                                   };
         [arr  addObject: dict];
       //  NSLog(@"dict = %@", dict);
@@ -295,9 +314,9 @@
     return arr;
 }
 
-
 -(NSMutableArray<NSDictionary *> *) getFilmsFromStart: (NSInteger) startRow numRow: (NSInteger) numRow
 {
+   // NSLog(@"--- STRT getFilmsFromStart: %li num: %li", startRow, numRow);
     NSMutableArray<NSDictionary *> *arr  = [NSMutableArray  array];
   //  NSInteger     filmsCount  = [self getFilmsCount];
 //    if(startRow + numRow >=  filmsCount)
@@ -314,13 +333,15 @@
         NSDictionary *dict  =  @{ @"filmsName"     :   ([result stringForColumn      : @"fN"]),
                                   @"filmsGenre"   :   [result stringForColumn     : @"gN"],
                                   @"filmsDirector" :   ([result stringForColumn      : @"dN"]),
-                                  @"filmsId" :   @([result longForColumn      : @"fd"])
+                                  @"id" :   @([result longForColumn      : @"fd"])
                                   };
         [arr  addObject: dict];
         //  NSLog(@"dict = %@", dict);
         
     }
     [result close];
+    
+   // NSLog(@"arr.count = %li", arr.count);
     if(arr.count == 0) {
         NSLog(@"!!!!!!!!!!!!!!!!!!     Из базы идет нулевой массив");
 //        for (NSInteger i = 0; i < numRow; i++)
@@ -335,7 +356,7 @@
 //        }
 
     }
-    
+  //  NSLog(@"--- END getFilmsFromStart: %li num: %li", startRow, numRow);
     return arr;
 }
 
@@ -352,10 +373,138 @@
     {
     retValue = [result longForColumn:@"cnt"];
     }
-  //  NSLog(@"retValue = %li", retValue);
-    if(retValue == 0) exit (1);
+    NSLog(@"retValue = %li", retValue);
+  //  if(retValue == 0) exit (1);
     return retValue;
 }
+
+
+
+-(void)removeRow: (NSDictionary *) dict tableName: (NSString *) tn
+{
+    NSString   *queryStr  = [NSString stringWithFormat: @"DELETE FROM %@ WHERE id = ?", tn ];
+    if(![self->db executeUpdate: queryStr, [dict objectForKey:@"id"]])
+    {
+        NSLog(@"%@", self->db.lastError);
+        if([self->db.lastError.description containsString:@"FOREIGN KEY" ])
+        {
+            NSAlert   *alert  = [NSAlert  new];
+            alert.messageText   = @"Ошибка!";
+            alert.informativeText  = @"Невозможно удалить! \nРодительская таблица (Таблица фильмов) содержит связанные данные!";
+            alert.alertStyle    = NSCriticalAlertStyle;
+            [alert runModal];
+        }
+    }
+}
+
+
+
+-(void)addRow: (NSDictionary *) dict tableName: (NSString *) tn
+{
+    /*
+     
+     NSDictionary    *filmsDict  = @{
+     @"0id" : @"filmsName",
+     @"1id" : @"filmsGenre",
+     @"2id" : @"filmsDirector",
+     @"0title" : @"Название             ",
+     @"1title" : @"Жанр",
+     @"2title" : @"Режиссер"
+     };
+     
+     
+     NSDictionary    *directorsDict  = @{
+     @"0id" : @"directorsName",
+     @"0title" : @"Режиссер          "
+     };
+     
+     
+     NSDictionary    *genresDict  = @{
+     @"0id" : @"genresName",
+     @"0title" : @"Жанр       "
+     };
+     
+     */
+    NSLog(@"MyDB addRow dict = %@", dict);
+    NSLog(@"MyDB addRow tableName = %@", tn);
+    
+    
+    NSString   *queryStr      =  [ self->MyDBAddRowDictionary[tn] copy];
+    if([tn isEqualToString:@"films"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"filmsName"], [dict objectForKey:@"filmsGenre"], [dict objectForKey:@"filmsDirector"]])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+
+    }
+    else if([tn isEqualToString:@"genres"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"genresName"]])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+
+    }
+    else if([tn isEqualToString:@"directors"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"directorsName"]] )
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+    }
+}
+
+-(void)setRow: (NSDictionary *) dict tableName: (NSString *) tn
+{
+    //@"UPDATE products SET name = ?, weight = ?, price = ? WHERE id = ?";
+    NSString   *queryStr      =  [ self->MyDBSetRowDictionary[tn] copy];
+    if([tn isEqualToString:@"films"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"filmsName"], [dict objectForKey:@"filmsGenre"], [dict objectForKey:@"filmsDirector"], [dict objectForKey:@"id"] ])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+    }
+    else if([tn isEqualToString:@"genres"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"genresName"], [dict objectForKey:@"id"]  ])
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+    }
+    else if([tn isEqualToString:@"directors"])
+    {
+        if(![self->db executeUpdate: queryStr, [dict objectForKey:@"directorsName"], [dict objectForKey:@"id"]] )
+        {
+            NSLog(@"%@", self->db.lastError);
+        }
+    }
+}
+
+-(void)sqliteForeignKeyOn
+{
+    NSString* sql = @"PRAGMA foreign_keys";
+    FMResultSet *rs = [self->db executeQuery:sql];
+    int enabled;
+    if ([rs next]) {
+        enabled = [rs intForColumnIndex:0];
+    }
+    [rs close];
+    if (!enabled) {
+        // enable foreign_key
+        sql = @"PRAGMA foreign_keys = ON;";
+        [db executeUpdate:sql];
+        // check if successful
+        sql = @"PRAGMA foreign_keys";
+        FMResultSet *rs = [self->db executeQuery:sql];
+        if ([rs next]) {
+            enabled = [rs intForColumnIndex:0];
+        }
+        [rs close];
+    }
+}
+
 
 -(void)dbReopen
 {

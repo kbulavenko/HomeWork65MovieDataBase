@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		197E008B1E7CAA9F002D2557 /* MyOneRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197E00891E7CAA9F002D2557 /* MyOneRowView.m */; };
 		197E008C1E7CAA9F002D2557 /* MyOneRowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E008A1E7CAA9F002D2557 /* MyOneRowView.xib */; };
+		1998E5D21E7D4BA600331FBE /* MyOneRowViewGenre.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998E5D11E7D4BA600331FBE /* MyOneRowViewGenre.xib */; };
+		1998E5D41E7D4BC900331FBE /* MyOneRowViewDirector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1998E5D31E7D4BC900331FBE /* MyOneRowViewDirector.xib */; };
 		19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E1048E1E79371E007476A3 /* AppDelegate.m */; };
 		19E104921E79371E007476A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104911E79371E007476A3 /* main.m */; };
 		19E104951E79371E007476A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104941E79371E007476A3 /* ViewController.m */; };
@@ -55,6 +57,8 @@
 		197E00881E7CAA9F002D2557 /* MyOneRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneRowView.h; sourceTree = "<group>"; };
 		197E00891E7CAA9F002D2557 /* MyOneRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneRowView.m; sourceTree = "<group>"; };
 		197E008A1E7CAA9F002D2557 /* MyOneRowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOneRowView.xib; sourceTree = "<group>"; };
+		1998E5D11E7D4BA600331FBE /* MyOneRowViewGenre.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOneRowViewGenre.xib; sourceTree = "<group>"; };
+		1998E5D31E7D4BC900331FBE /* MyOneRowViewDirector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOneRowViewDirector.xib; sourceTree = "<group>"; };
 		19E1048A1E79371E007476A3 /* HomeWork65MovieDataBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork65MovieDataBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E1048D1E79371E007476A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19E1048E1E79371E007476A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				197E00881E7CAA9F002D2557 /* MyOneRowView.h */,
 				197E00891E7CAA9F002D2557 /* MyOneRowView.m */,
 				197E008A1E7CAA9F002D2557 /* MyOneRowView.xib */,
+				1998E5D11E7D4BA600331FBE /* MyOneRowViewGenre.xib */,
+				1998E5D31E7D4BC900331FBE /* MyOneRowViewDirector.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 				19ED02881E79F607005F687F /* MyViewController.xib in Resources */,
 				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
 				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
+				1998E5D41E7D4BC900331FBE /* MyOneRowViewDirector.xib in Resources */,
+				1998E5D21E7D4BA600331FBE /* MyOneRowViewGenre.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

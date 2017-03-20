@@ -34,10 +34,13 @@
 
 
 - (instancetype)initWithDB: (MyDB *) db1;
+-(NSDictionary*) getRowAtIndex  : (NSInteger) index;
 
--(void) deleteRow: (NSInteger) index;
--(void) addRow : (NSDictionary *) dict;
--(void) editRow: (NSDictionary *) dict;
+
+
+-(void) deleteRow: (NSInteger) index tableIdentifier: (NSString *) ti;
+-(void) addRow : (NSDictionary *) dict tableIdentifier: (NSString *) ti;
+-(void) editRow: (NSDictionary *) dict tableIdentifier: (NSString *) ti;
 
 
 @end

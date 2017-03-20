@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MyTableViewController.h"
 //#import "MyTableViewController1.h"
+#import "MyOneRowView.h"
 
 #import "MyViewController.h"
 //#import "MyViewController1.h"

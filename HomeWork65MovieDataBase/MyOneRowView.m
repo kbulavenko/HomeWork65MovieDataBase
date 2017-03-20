@@ -13,33 +13,33 @@
 @end
 
 @implementation MyOneRowView
-@synthesize name, weight, price, btnOk, btnCancel, readResult;
+@synthesize filmName, filmGenreCombo, filmDirectorCombo, genre ,director , btnOk, btnCancel, readResult, tableName, isEditNotAdd, selectedId;
 
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil operationType: (BOOL) ot  editValues: (NSDictionary *) ev
-
-{
-    self = [super initWithNibName: nibNameOrNil bundle:nibBundleOrNil];
-    if (self != nil)
-    {
-        self->isOperationEdit   = ot;
-        self->editValues        = ev;
-        
-        if(self->isOperationEdit )
-        {
-          //  NSLog(@"ev = %@", ev);
-          //  self->name.stringValue   = [ self->editValues[@"name"] copy];
-          //  self->weight.stringValue   = [ self->editValues[@"weight"] copy];
-          //  self->price.stringValue   = [ self->editValues[@"price"] copy];
-            //NSLog(@"self->editValues[@\"name\"] =  %@", self->editValues[@"name"]);
-            
-            
-        }
-        
-    }
-    return self;
-
-}
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil operationType: (BOOL) ot  editValues: (NSDictionary *) ev
+//
+//{
+//    self = [super initWithNibName: nibNameOrNil bundle:nibBundleOrNil];
+//    if (self != nil)
+//    {
+//        self->isOperationEdit   = ot;
+//        self->editValues        = ev;
+//        
+//        if(self->isOperationEdit )
+//        {
+//          //  NSLog(@"ev = %@", ev);
+//          //  self->name.stringValue   = [ self->editValues[@"name"] copy];
+//          //  self->weight.stringValue   = [ self->editValues[@"weight"] copy];
+//          //  self->price.stringValue   = [ self->editValues[@"price"] copy];
+//            //NSLog(@"self->editValues[@\"name\"] =  %@", self->editValues[@"name"]);
+//            
+//            
+//        }
+//        
+//    }
+//    return self;
+//
+//}
 
 
 
@@ -47,6 +47,11 @@
     [super viewDidLoad];
     // Do view setup here.
    // self.name.stringValue   = @"";
+    NSLog(@"MyOneRowView viewDidLoad");
+    self->filmGenreCombo.usesDataSource = false;
+    self->filmDirectorCombo.usesDataSource = false;
+    self->readResult = [NSDictionary  dictionary];
+    
 }
 
 - (IBAction)btnClick:(id)sender
@@ -54,9 +59,21 @@
     ///
     if(sender == btnOk)
     {
-       // [self      removeFromParentViewController];
+       
+      //  NSLog(@"[self->filmGenreCombo objectValues] %@", [self->filmGenreCombo objectValues]);
+      //  NSLog(@"[self->filmDirectorCombo objectValues] %@", [self->filmDirectorCombo objectValues]);
         
-        if(self.weight.stringValue.intValue == 0 || self.price.stringValue.doubleValue == 0.0 || self.name.stringValue.length == 0)
+        
+        // [self      removeFromParentViewController];
+        
+        if( ( [self.tableName isEqualToString:@"films"] &&
+            ( self.filmName.stringValue.length == 0 ||
+             self.filmGenreCombo.stringValue.length == 0 ||
+             self.filmDirectorCombo.stringValue.length == 0))
+           || ([self.tableName isEqualToString:@"genres"] &&
+               ( self.genre.stringValue.length == 0 ))
+           || ([self.tableName isEqualToString:@"directors"] &&
+               ( self.director.stringValue.length == 0 )))
         {
             NSAlert   *alert  = [NSAlert  new];
             alert.messageText   = @"Ошибка!";
@@ -67,27 +84,47 @@
             return;
         }
         
+        NSString   *action  = (self.isEditNotAdd)?@"Edit":@"Add";
+        
+        NSString   *filmsName  = (self.filmName.stringValue.copy == nil )? @"_1" : self.filmName.stringValue.copy;
+        NSString   *filmsGenre  = (self.filmGenreCombo.stringValue.copy == nil )? @"_2" : self.filmGenreCombo.stringValue.copy;
+        NSString   *filmsDirector  = (self.filmDirectorCombo.stringValue.copy == nil )? @"_3" :self.filmDirectorCombo.stringValue.copy;
+        NSString   *genresName  = (self.genre.stringValue.copy == nil )? @"_4" : self.genre.stringValue.copy;
+        NSString   *directorsName  = (self.director.stringValue.copy == nil )? @"_5" : self.director.stringValue.copy;
+        
+//        
+//       NSDictionary *dict =   @{
+//                                 @"filmsName"           :   filmsName,
+//                                 @"filmsGenre"          :   filmsGenre,
+//                                 @"filmsDirector"       :   filmsDirector,
+//                                 @"genresName"          :   genresName,
+//                                 @"directorsName"       :   directorsName,
+//                                 @"tableName"           :   self.tableName.copy,
+//                                 @"action"              :   action
+//                                 };
         
         self->readResult   =   @{
-                                 @"name"     :   self.name.stringValue.copy,
-                                 @"weight"   :   self.weight.stringValue.copy,
-                                 @"price"     :   self.price.stringValue.copy
-                                 
+                                 @"filmsName"           :   filmsName,
+                                 @"filmsGenre"          :   filmsGenre,
+                                 @"filmsDirector"       :   filmsDirector,
+                                 @"genresName"          :   genresName,
+                                 @"directorsName"       :   directorsName,
+                                 @"tableName"           :   self.tableName.copy,
+                                 @"action"              :   action,
+                                 @"id"                  :   @(self.selectedId)
                                  };
+//        if(self.selectedId != -1)
+//        {
+//            [self.readResult set: [NSString stringWithFormat:@"%li", self.selectedId] forKey:@"id"];
+//        }
         
+        
+        NSLog(@"Begin Notification");
         NSNotificationCenter    *NC  =   [NSNotificationCenter defaultCenter];
         
         
-        if(self->isOperationEdit)
-        {
-            [NC   postNotificationName: MyOneRowViewDataReadyUpdateNotification object: self userInfo: self->readResult];
-        }
-        else
-        {
-            [NC   postNotificationName: MyOneRowViewDataReadyAddNotification object: self userInfo: self->readResult];
-        }
-        
-        
+        [NC   postNotificationName: MyOneRowViewDataReadyUpdateNotification object: nil   userInfo: self->readResult];
+        NSLog(@" Begin [self.view.window close];");
         [self.view.window close];
      //   [self.view removeFromSuperview];
      //   [self      removeFromParentViewController];
@@ -101,4 +138,8 @@
     //    [self      removeFromParentViewController];
     }
 }
+
+
+
+
 @end

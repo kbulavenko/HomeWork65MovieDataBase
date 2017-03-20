@@ -15,16 +15,21 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    
+    srand((unsigned int)time(NULL));
     
     //   Create   DB
     NSString   *dbPath  =  [NSString   stringWithFormat:@"%@/Documents/filmsNormKeyed.db", NSHomeDirectory()];
     NSLog(@"%@", dbPath);
     
     self.db  = [[MyDB alloc] initWithPath: dbPath];
-    //[self->db makeDBWithNum: 300013];
-   // [self->db dbReopen];
-
+    [self.db sqliteForeignKeyOn];
+    
+    
+  //  [self->db makeDBWithNum: 5011];
+    [self->db dbReopen];
+    [self.db sqliteForeignKeyOn];
+    
+    
     
     
     //     Create TableDataSource
@@ -33,12 +38,12 @@
     if(self.MTVC == nil)
     {
         NSLog(@"Data Source Nil");
-        exit(1);
+       // exit(1);
     }
     
     //  Begin
     
-    srand((unsigned int) time(NULL));
+    
     
     
     NSDictionary    *filmsDict  = @{
@@ -121,9 +126,9 @@
     
     
     //  Set Identifier and Table Data Source
-    self.MyVCFilms.tableView.identifier       = @"TableViewIdFilms";
-    self.MyVCGenres.tableView.identifier      = @"TableViewIdGenres";
-    self.MyVCDirectors.tableView.identifier   = @"TableViewIdDirectors";
+    self.MyVCFilms.tableView.identifier       = @"films";
+    self.MyVCGenres.tableView.identifier      = @"genres";
+    self.MyVCDirectors.tableView.identifier   = @"directors";
 
     
     //   Задаем Источники данных TableView
@@ -137,10 +142,22 @@
     self.MyVCDirectors.tableView.dataSource = self.MTVC;
     self.MyVCGenres.tableView.dataSource    = self.MTVC;
     
+    //  ------------------------  Notifications  ----------------------
+    NSNotificationCenter   *NC  = [NSNotificationCenter defaultCenter];
+    
+    [NC addObserver: self selector: @selector(updateTable:)  name:MyOneRowViewDataReadyUpdateNotification object: nil];
+    
+    
+    
+    
+    
+    
   //////////    END   ---------------------------------   **********************
    
     //  NSLog(@"%@ %@ %@ %@ %@ %@ ", filmsItem, genresItem, directorsItem, MyVCFilms, MyVCGenres, MyVCDirectors);
     //
+    
+    
     
     
 }
@@ -150,5 +167,45 @@
 
     // Update the view, if already loaded.
 }
+
+-(void)updateTable: (NSNotification *) note
+{
+    NSLog(@"---  ViewController updateTable: note.userInfo = %@", note.userInfo);
+    if([note.name isEqualToString: MyOneRowViewDataReadyUpdateNotification])
+    {
+        NSDictionary  *dict   = note.userInfo;
+        NSString   *tn   = dict[@"tableName"];
+        if([dict[@"action" ] isEqualToString:@"Add"])
+        {
+            
+            [self.MTVC addRow:dict tableIdentifier: tn];
+            
+        }
+        else if([dict[@"action" ] isEqualToString:@"Edit"])
+        {
+            [self.MTVC editRow:dict tableIdentifier: dict[@"tableName"]];
+        }
+        
+        if([tn isEqualToString:@"films"])
+        {
+            [self.MyVCFilms.tableView reloadData];
+        }
+        else if([tn isEqualToString:@"genres"])
+        {
+            [self.MyVCGenres.tableView reloadData];
+        }
+        else if([tn isEqualToString:@"directors"])
+        {
+            [self.MyVCDirectors.tableView reloadData];
+        }
+        else
+        {
+            NSLog(@"Идентификатор таблицы не подошел");
+        }
+
+    }
+}
+
+
 
 @end

@@ -11,7 +11,15 @@
 #import "FMDB.h"
 
 
+
+
 @interface MyDB : NSObject
+{
+    NSDictionary  *MyDBAddRowDictionary;
+    NSDictionary  *MyDBSetRowDictionary;
+    
+}
+
 
 @property   FMDatabase   *db;
 
@@ -27,5 +35,9 @@
 -(NSMutableArray<NSDictionary *> *) getFilmsFromStart: (NSInteger) startRow numRow: (NSInteger) numRow;
 -(NSInteger)getFilmsCount;
 -(void)dbReopen;
+-(void)removeRow: (NSDictionary *) dict tableName: (NSString *) tn;
+-(void)addRow: (NSDictionary *) dict tableName: (NSString *) tn;
+-(void)setRow: (NSDictionary *) dict tableName: (NSString *) tn;
+-(void)sqliteForeignKeyOn;
 
 @end
