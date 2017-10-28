@@ -107,7 +107,7 @@
 
 -(void)clearTableView
 {
-    self->THV    = [[NSTableHeaderView alloc]  init];
+  //  self->THV    = [[NSTableHeaderView alloc]  init];
     NSArray     *arr   = self.tableView.tableColumns;
     for (NSInteger i = arr.count - 1   ;  i >= 0; i--)
     {
@@ -131,8 +131,8 @@
         NSTextField  *TF  = [[NSTextField alloc]  initWithFrame: NSMakeRect(0, 0, 100, 30) ];
         TF.stringValue   = titleTC.copy;
         
-        [self->THV addSubview: TF ];
-        NSLog(@"self->THV = %@", self->THV);
+      //  [self->THV addSubview: TF ];
+      //  NSLog(@"self->THV = %@", self->THV);
         
         NSLog(@"!!!!!!!!!!!!!!   identifier = %@ title = %@", identifierTC, titleTC);
         
@@ -149,7 +149,7 @@
         
         NSLog(@"%@", self.tableView.tableColumns);
     }
-    [self.tableView setHeaderView: self->THV];
+ //   [self.tableView setHeaderView: self->THV];
     NSLog(@"%@", self.tableView.tableColumns);
 //[self.tableView  reloadData];
  //   self.tableView.needsDisplay = YES;
@@ -163,7 +163,7 @@
     {
         
         self->tableHeadersDict   = d;
-        self->THV    = [[NSTableHeaderView alloc]  init];
+       // self->THV    = [[NSTableHeaderView alloc]  init];
               //  [self->THV  add];
         NSRect frameTV   = NSMakeRect( 30, 90, 440, 200);
 //        frameTV   = self.view.frame;
@@ -175,7 +175,7 @@
         NSLog(@"%g %g %g %g", frameTV.origin.x, frameTV.origin.y, frameTV.size.width, frameTV.size.height);
 
         self->tableView = [[NSTableView  alloc] initWithFrame: frameTV];
-        [self->tableView setHeaderView: self->THV];
+      //  [self->tableView setHeaderView: self->THV];
        // self->tableView.headerView
        // [self clearTableView];
         [self createTableColumnsWithDictionary: d];

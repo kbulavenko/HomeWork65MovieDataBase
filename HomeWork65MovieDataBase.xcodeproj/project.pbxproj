@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1947144D1E7A78C1006D6138 /* MyViewControllerGenres.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1947144C1E7A78C1006D6138 /* MyViewControllerGenres.xib */; };
-		1947144F1E7A78CD006D6138 /* MyViewControllerDirectors.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1947144E1E7A78CD006D6138 /* MyViewControllerDirectors.xib */; };
-		194714511E7A7E32006D6138 /* MyViewControllerBlank.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194714501E7A7E32006D6138 /* MyViewControllerBlank.xib */; };
-		194714541E7A7EB4006D6138 /* MyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194714531E7A7EB4006D6138 /* MyTestViewController.m */; };
-		194714561E7A815C006D6138 /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194714551E7A815C006D6138 /* MyTestViewController.xib */; };
-		194714581E7A87C6006D6138 /* MyTestViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194714571E7A87C6006D6138 /* MyTestViewController1.xib */; };
-		1947145A1E7A87E5006D6138 /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 194714591E7A87E5006D6138 /* MyTestViewController.xib */; };
-		1947145C1E7A8DC7006D6138 /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1947145B1E7A8DC7006D6138 /* MyTestViewController.xib */; };
 		19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E1048E1E79371E007476A3 /* AppDelegate.m */; };
 		19E104921E79371E007476A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104911E79371E007476A3 /* main.m */; };
 		19E104951E79371E007476A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104941E79371E007476A3 /* ViewController.m */; };
@@ -37,7 +29,9 @@
 		19E104DD1E794C86007476A3 /* MyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DC1E794C86007476A3 /* MyDB.m */; };
 		19E104E01E79790D007476A3 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DF1E79790D007476A3 /* MyTableViewController.m */; };
 		19ED02851E79BC2A005F687F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02831E79BC2A005F687F /* MyViewController.m */; };
-		19ED02861E79BC2A005F687F /* MyViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02841E79BC2A005F687F /* MyViewController1.xib */; };
+		19ED02881E79F607005F687F /* MyViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02871E79F607005F687F /* MyViewController1.xib */; };
+		19ED02961E7A0435005F687F /* MyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02941E7A0435005F687F /* MyTestViewController.m */; };
+		19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02981E7A0783005F687F /* MyTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,15 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1947144C1E7A78C1006D6138 /* MyViewControllerGenres.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewControllerGenres.xib; sourceTree = "<group>"; };
-		1947144E1E7A78CD006D6138 /* MyViewControllerDirectors.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewControllerDirectors.xib; sourceTree = "<group>"; };
-		194714501E7A7E32006D6138 /* MyViewControllerBlank.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewControllerBlank.xib; sourceTree = "<group>"; };
-		194714521E7A7EB4006D6138 /* MyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTestViewController.h; sourceTree = "<group>"; };
-		194714531E7A7EB4006D6138 /* MyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTestViewController.m; sourceTree = "<group>"; };
-		194714551E7A815C006D6138 /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
-		194714571E7A87C6006D6138 /* MyTestViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController1.xib; sourceTree = "<group>"; };
-		194714591E7A87E5006D6138 /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
-		1947145B1E7A8DC7006D6138 /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
 		19E1048A1E79371E007476A3 /* HomeWork65MovieDataBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork65MovieDataBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E1048D1E79371E007476A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19E1048E1E79371E007476A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,7 +86,10 @@
 		19E104DF1E79790D007476A3 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		19ED02821E79BC2A005F687F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		19ED02831E79BC2A005F687F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		19ED02841E79BC2A005F687F /* MyViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController1.xib; sourceTree = "<group>"; };
+		19ED02871E79F607005F687F /* MyViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController1.xib; sourceTree = "<group>"; };
+		19ED02931E7A0435005F687F /* MyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTestViewController.h; sourceTree = "<group>"; };
+		19ED02941E7A0435005F687F /* MyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTestViewController.m; sourceTree = "<group>"; };
+		19ED02981E7A0783005F687F /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,16 +206,10 @@
 				19E104DF1E79790D007476A3 /* MyTableViewController.m */,
 				19ED02821E79BC2A005F687F /* MyViewController.h */,
 				19ED02831E79BC2A005F687F /* MyViewController.m */,
-				19ED02841E79BC2A005F687F /* MyViewController1.xib */,
-				194714591E7A87E5006D6138 /* MyTestViewController.xib */,
-				194714551E7A815C006D6138 /* MyTestViewController.xib */,
-				194714571E7A87C6006D6138 /* MyTestViewController1.xib */,
-				1947145B1E7A8DC7006D6138 /* MyTestViewController.xib */,
-				1947144E1E7A78CD006D6138 /* MyViewControllerDirectors.xib */,
-				1947144C1E7A78C1006D6138 /* MyViewControllerGenres.xib */,
-				194714501E7A7E32006D6138 /* MyViewControllerBlank.xib */,
-				194714521E7A7EB4006D6138 /* MyTestViewController.h */,
-				194714531E7A7EB4006D6138 /* MyTestViewController.m */,
+				19ED02931E7A0435005F687F /* MyTestViewController.h */,
+				19ED02941E7A0435005F687F /* MyTestViewController.m */,
+				19ED02871E79F607005F687F /* MyViewController1.xib */,
+				19ED02981E7A0783005F687F /* MyTestViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -363,16 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194714581E7A87C6006D6138 /* MyTestViewController1.xib in Resources */,
-				1947144D1E7A78C1006D6138 /* MyViewControllerGenres.xib in Resources */,
+				19ED02881E79F607005F687F /* MyViewController1.xib in Resources */,
 				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
-				1947145A1E7A87E5006D6138 /* MyTestViewController.xib in Resources */,
-				1947145C1E7A8DC7006D6138 /* MyTestViewController.xib in Resources */,
-				194714561E7A815C006D6138 /* MyTestViewController.xib in Resources */,
-				1947144F1E7A78CD006D6138 /* MyViewControllerDirectors.xib in Resources */,
-				194714511E7A7E32006D6138 /* MyViewControllerBlank.xib in Resources */,
+				19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */,
 				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
-				19ED02861E79BC2A005F687F /* MyViewController1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +385,7 @@
 				19E104921E79371E007476A3 /* main.m in Sources */,
 				19E104CF1E793AF8007476A3 /* FMDatabaseQueue.m in Sources */,
 				19E1048F1E79371E007476A3 /* AppDelegate.m in Sources */,
-				194714541E7A7EB4006D6138 /* MyTestViewController.m in Sources */,
+				19ED02961E7A0435005F687F /* MyTestViewController.m in Sources */,
 				19ED02851E79BC2A005F687F /* MyViewController.m in Sources */,
 				19E104CC1E793AF8007476A3 /* FMDatabase.m in Sources */,
 				19E104D01E793AF8007476A3 /* FMResultSet.m in Sources */,

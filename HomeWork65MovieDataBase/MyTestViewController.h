@@ -13,7 +13,7 @@
     //   NSTableView   *tableView1;
     NSTableView   *tableView;
     NSScrollView   *scroll;
-    NSTableHeaderView     *THV;
+   // NSTableHeaderView     *THV;
    // NSView          *view;
     NSDictionary      *tableHeadersDict;
 }
