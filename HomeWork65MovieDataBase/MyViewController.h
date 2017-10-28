@@ -10,9 +10,11 @@
 
 @interface MyViewController : NSViewController
 {
-   // NSTableView   *tableView;
+ //   NSTableView   *tableView1;
+    NSTableView   *tableView;
+    
 }
-@property (weak) IBOutlet NSTableView *tableView;
+@property (strong) IBOutlet NSTableView *tableView;
 
 
 @property (weak) IBOutlet NSButton *btnAdd;

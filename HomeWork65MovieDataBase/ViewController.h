@@ -10,21 +10,30 @@
 #import "MyTableViewController.h"
 //#import "MyTableViewController1.h"
 
-#import "MyViewController.h"
+//#import "MyViewController.h"
 //#import "MyViewController1.h"
+//#import "MyTestViewController.h"
 #import "MyTestViewController.h"
 
 #import "MyDB.h"
 
 @interface ViewController : NSViewController
 
-@property  MyTableViewController  *MTVC;
+@property  MyTableViewController  *MTVCfilms;
+@property  MyTableViewController  *MTVCgenres;
+@property  MyTableViewController  *MTVCdirectors;
+
 //@property  MyTableViewController1  *MTVC1;
 @property  MyDB                     *db;
 
-@property (strong, atomic) MyViewController       *MyVCFilms;
-@property (strong, atomic) MyTestViewController       *MyVCGenres;
-@property (strong, atomic) MyViewController       *MyVCDirectors;
+@property (strong ) MyTestViewController       *MyVCFilms;
+@property (strong) MyTestViewController       *MyVCGenres;
+@property (strong) MyTestViewController       *MyVCDirectors;
+
+@property (strong) NSTabViewItem   *filmsItem;
+@property (strong) NSTabViewItem   *genresItem;
+@property (strong) NSTabViewItem   *directorsItem;
+
 
 
 @property (weak) IBOutlet NSTabView *tabView;

@@ -13,7 +13,11 @@
 @interface MyTableViewController : NSObject<NSTableViewDataSource>
 
 
-@property   MyDB   *myDB;
+@property   (strong) MyDB   *myDB;
+@property   (strong) NSMutableArray<NSDictionary *>    *films;
+@property  (strong)  NSMutableArray<NSDictionary *>    *genres;
+@property  (strong) NSMutableArray<NSDictionary *>    *directors;
+
 
 
 - (instancetype)initWithDB: (MyDB *) db1;

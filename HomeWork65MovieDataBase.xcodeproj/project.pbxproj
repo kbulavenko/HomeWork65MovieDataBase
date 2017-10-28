@@ -29,10 +29,7 @@
 		19E104DD1E794C86007476A3 /* MyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DC1E794C86007476A3 /* MyDB.m */; };
 		19E104E01E79790D007476A3 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E104DF1E79790D007476A3 /* MyTableViewController.m */; };
 		19ED02851E79BC2A005F687F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02831E79BC2A005F687F /* MyViewController.m */; };
-		19ED02861E79BC2A005F687F /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02841E79BC2A005F687F /* MyViewController.xib */; };
 		19ED02881E79F607005F687F /* MyViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02871E79F607005F687F /* MyViewController1.xib */; };
-		19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02891E79F61B005F687F /* MyViewController2.xib */; };
-		19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED028B1E79F62A005F687F /* MyViewController3.xib */; };
 		19ED02961E7A0435005F687F /* MyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ED02941E7A0435005F687F /* MyTestViewController.m */; };
 		19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19ED02981E7A0783005F687F /* MyTestViewController.xib */; };
 /* End PBXBuildFile section */
@@ -89,10 +86,7 @@
 		19E104DF1E79790D007476A3 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		19ED02821E79BC2A005F687F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		19ED02831E79BC2A005F687F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		19ED02841E79BC2A005F687F /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		19ED02871E79F607005F687F /* MyViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController1.xib; sourceTree = "<group>"; };
-		19ED02891E79F61B005F687F /* MyViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController2.xib; sourceTree = "<group>"; };
-		19ED028B1E79F62A005F687F /* MyViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController3.xib; sourceTree = "<group>"; };
 		19ED02931E7A0435005F687F /* MyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTestViewController.h; sourceTree = "<group>"; };
 		19ED02941E7A0435005F687F /* MyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTestViewController.m; sourceTree = "<group>"; };
 		19ED02981E7A0783005F687F /* MyTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTestViewController.xib; sourceTree = "<group>"; };
@@ -214,11 +208,8 @@
 				19ED02831E79BC2A005F687F /* MyViewController.m */,
 				19ED02931E7A0435005F687F /* MyTestViewController.h */,
 				19ED02941E7A0435005F687F /* MyTestViewController.m */,
-				19ED02841E79BC2A005F687F /* MyViewController.xib */,
-				19ED02891E79F61B005F687F /* MyViewController2.xib */,
 				19ED02871E79F607005F687F /* MyViewController1.xib */,
 				19ED02981E7A0783005F687F /* MyTestViewController.xib */,
-				19ED028B1E79F62A005F687F /* MyViewController3.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -357,10 +348,7 @@
 				19ED02881E79F607005F687F /* MyViewController1.xib in Resources */,
 				19E104971E79371E007476A3 /* Assets.xcassets in Resources */,
 				19ED02991E7A0783005F687F /* MyTestViewController.xib in Resources */,
-				19ED028A1E79F61B005F687F /* MyViewController2.xib in Resources */,
 				19E1049A1E79371F007476A3 /* Main.storyboard in Resources */,
-				19ED028C1E79F62A005F687F /* MyViewController3.xib in Resources */,
-				19ED02861E79BC2A005F687F /* MyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

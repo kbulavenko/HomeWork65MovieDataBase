@@ -17,7 +17,12 @@
 
 
 - (instancetype)initWithPath: (NSString *)  p;
--(void)makeDB;
+-(void)makeDBWithNum: (int) num;
 
+
+-(NSMutableArray<NSDictionary *> *) getFilms;
+
+-(NSMutableArray<NSDictionary *> *) getGenres;
+-(NSMutableArray<NSDictionary *> *) getDirectors;
 
 @end
