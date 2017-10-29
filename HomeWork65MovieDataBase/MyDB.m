@@ -57,8 +57,8 @@
     
     
     NSString   *createFilms = @"CREATE TABLE IF NOT EXISTS films ( id integer not null primary key autoincrement, name text, id_genre integer,      id_director     integer,  FOREIGN KEY  (id_genre)  REFERENCES    genres (id) ON DELETE     NO ACTION  ON UPDATE       CASCADE, FOREIGN KEY  (id_director)  REFERENCES    directors (id)  ON DELETE     NO ACTION      ON UPDATE      CASCADE      );   ";
-    NSString   *createGenres = @"CREATE TABLE  IF NOT EXISTS genres (id integer not null primary key autoincrement, genresName text);";
-    NSString   *createDirectors = @"CREATE TABLE  IF NOT EXISTS directors (id integer not null primary key autoincrement, directorsName text);";
+    NSString   *createGenres = @"CREATE TABLE  IF NOT EXISTS genres (id integer not null primary key autoincrement, genresName  text );";
+    NSString   *createDirectors = @"CREATE TABLE  IF NOT EXISTS directors (id integer not null primary key autoincrement, directorsName text );";
     
     NSString   *dropFilmsIfExists  = @"DROP TABLE  IF EXISTS films";
     NSString   *dropGenresIfExists  = @"DROP TABLE  IF EXISTS genres";
